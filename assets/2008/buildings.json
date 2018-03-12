@@ -1,0 +1,82 @@
+{
+"frames": [
+	{
+		"filename": "object_00001",
+		"frame": {"x":0, "y":0, "w":902, "h":666},
+		"spriteSourceSize": {"x":49,"y":67,"w":1000,"h":800},
+		"sourceSize": {"w":1000,"h":800}
+	},
+	{
+		"filename": "object_00002",
+		"frame": {"x":0, "y":1587, "w":422, "h":434},
+		"spriteSourceSize": {"x":289,"y":184,"w":1000,"h":800},
+		"sourceSize": {"w":1000,"h":800}
+	},
+	{
+		"filename": "object_00003",
+		"frame": {"x":0, "y":667, "w":623, "h":484},
+		"spriteSourceSize": {"x":189,"y":158,"w":1000,"h":800},
+		"sourceSize": {"w":1000,"h":800}
+	},
+	{
+		"filename": "object_00004",
+		"frame": {"x":423, "y":1713, "w":351, "h":273},
+		"spriteSourceSize": {"x":325,"y":263,"w":1000,"h":800},
+		"sourceSize": {"w":1000,"h":800}
+	},
+	{
+		"filename": "object_00005",
+		"frame": {"x":817, "y":1228, "w":392, "h":559},
+		"spriteSourceSize": {"x":304,"y":120,"w":1000,"h":800},
+		"sourceSize": {"w":1000,"h":800}
+	},
+	{
+		"filename": "object_00006",
+		"frame": {"x":624, "y":814, "w":124, "h":132},
+		"spriteSourceSize": {"x":438,"y":334,"w":1000,"h":800},
+		"sourceSize": {"w":1000,"h":800}
+	},
+	{
+		"filename": "object_00007",
+		"frame": {"x":817, "y":667, "w":392, "h":560},
+		"spriteSourceSize": {"x":319,"y":120,"w":1000,"h":800},
+		"sourceSize": {"w":1000,"h":800}
+	},
+	{
+		"filename": "object_00008",
+		"frame": {"x":0, "y":1152, "w":423, "h":434},
+		"spriteSourceSize": {"x":289,"y":184,"w":1000,"h":800},
+		"sourceSize": {"w":1000,"h":800}
+	},
+	{
+		"filename": "object_00009",
+		"frame": {"x":424, "y":1152, "w":392, "h":560},
+		"spriteSourceSize": {"x":304,"y":120,"w":1000,"h":800},
+		"sourceSize": {"w":1000,"h":800}
+	},
+	{
+		"filename": "object_00010",
+		"frame": {"x":624, "y":667, "w":191, "h":146},
+		"spriteSourceSize": {"x":405,"y":327,"w":1000,"h":800},
+		"sourceSize": {"w":1000,"h":800}
+	},
+	{
+		"filename": "object_00011",
+		"frame": {"x":624, "y":947, "w":31, "h":80},
+		"spriteSourceSize": {"x":521,"y":341,"w":1000,"h":800},
+		"sourceSize": {"w":1000,"h":800}
+	},
+	{
+		"filename": "object_00012",
+		"frame": {"x":624, "y":1028, "w":30, "h":80},
+		"spriteSourceSize": {"x":490,"y":371,"w":1000,"h":800},
+		"sourceSize": {"w":1000,"h":800}
+	}
+
+],
+"meta": {
+	"image": "main",
+	"size": {"w": 2048, "h": 2048},
+	"scale": "1"
+}
+}

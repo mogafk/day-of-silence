@@ -1,0 +1,747 @@
+{
+  "1996": {
+    "background": "1996/background.png",
+    "foreground": "1996/trees.png",
+    "levelTimer": 120,
+    "target": 500,
+    "instruments": [
+      {
+        "name": "Поклейка листовок «Купи еды в последний раз» по району",
+        "image": "instrument_enable_00001",
+        "effency": 50,
+        "cost": 35,
+        "duration": 1,
+        "random": [
+          {
+            "chance": 33,
+            "type": "positive",
+            "effency": 50
+          },
+          {
+            "chance": 33,
+            "type": "negative",
+            "effency": 50
+          },
+          {
+            "chance": 0,
+            "type": "negative",
+            "effency": 0
+          }
+        ]
+      },
+      {
+        "name": "Распространение газеты «Не дай Бог» по ящикам",
+        "image": "instrument_enable_00002",
+        "effency": 75,
+        "cost": 50,
+        "duration": 7,
+        "random": [
+          {
+            "chance": 33,
+            "type": "positive",
+            "effency": 50
+          },
+          {
+            "chance": 33,
+            "type": "negative",
+            "effency": 50
+          },
+          {
+            "chance": 0,
+            "type": "negative",
+            "effency": 0
+          }
+        ]
+      },
+      {
+        "name": "Устроить ретроспективу фильмов с Арнольдом Шварценеггером для проголосовавших",
+        "image": "instrument_enable_00003",
+        "effency": 75,
+        "cost": 60,
+        "duration": 10,
+        "random": [
+          {
+            "chance": 33,
+            "type": "positive",
+            "effency": 50
+          },
+          {
+            "chance": 33,
+            "type": "negative",
+            "effency": 50
+          },
+          {
+            "chance": 0,
+            "type": "negative",
+            "effency": 0
+          }
+        ]
+      },
+      {
+        "name": "Устроить дискотеку «Голосуй или проиграешь» в школе",
+        "image": "instrument_enable_00004",
+        "effency": 80,
+        "cost": 70,
+        "duration": 10,
+        "random": [
+          {
+            "chance": 33,
+            "type": "positive",
+            "effency": 50
+          },
+          {
+            "chance": 33,
+            "type": "negative",
+            "effency": 50
+          },
+          {
+            "chance": 0,
+            "type": "negative",
+            "effency": 0
+          }
+        ]
+      },
+      {
+        "name": "Собрать ветеранов войны и труда на банкет",
+        "image": "instrument_enable_00005",
+        "effency": 100,
+        "cost": 80,
+        "duration": 12,
+        "random": [
+          {
+            "chance": 33,
+            "type": "positive",
+            "effency": 50
+          },
+          {
+            "chance": 33,
+            "type": "negative",
+            "effency": 50
+          },
+          {
+            "chance": 0,
+            "type": "negative",
+            "effency": 0
+          }
+        ]
+      },
+      {
+        "name": "Вечер авторской песни в районном военно-патриотическом клубе",
+        "image": "instrument_enable_00006",
+        "effency": 130,
+        "cost": 100,
+        "duration": 14,
+        "random": [
+          {
+            "chance": 33,
+            "type": "positive",
+            "effency": 50
+          },
+          {
+            "chance": 33,
+            "type": "negative",
+            "effency": 50
+          },
+          {
+            "chance": 0,
+            "type": "negative",
+            "effency": 0
+          }
+        ]
+      }
+    ],
+    "buildings": {
+      "texture": "1996/buildings.png",
+      "atlas": "1996/buildings.json",
+      "locations": [
+        {
+          "x": "0.278",
+          "y": "-0.207",
+          "building": "building_00002"
+        },
+        {
+          "x": "0.003",
+          "y": "0.087",
+          "building": "building_00003"
+        },
+        {
+          "x": "0.426",
+          "y": "0.152",
+          "building": "building_00006"
+        },
+        {
+          "x": "0.764",
+          "y": "-0.208",
+          "building": "building_00004"
+        },
+        {
+          "x": "0.657",
+          "y": "0.048",
+          "building": "building_00008"
+        },
+        {
+          "x": "0.567",
+          "y": "0.205",
+          "building": "building_00009"
+        },
+        {
+          "x": "0.215",
+          "y": "0.288",
+          "building": "building_00010"
+        },
+        {
+          "x": "0.848",
+          "y": "0.176",
+          "building": "building_00001"
+        },
+        {
+          "x": "0.547",
+          "y": "0.622",
+          "building": "building_00007"
+        },
+        {
+          "x": "0.381",
+          "y": "0.788",
+          "building": "building_00005"
+        },
+        {
+          "x": "0.668",
+          "y": "0.787",
+          "building": "building_00011"
+        }
+      ]
+    }
+  },
+  "2000": {
+    "background": "2000/background.png",
+    "foreground": "2000/trees.png",
+    "levelTimer": 120,
+    "target": 500,
+    "instruments": [
+      {
+        "image": "instrument_enable_00007",
+        "effency": 50,
+        "cost": 1,
+        "duration": 1
+      },
+      {
+        "image": "instrument_enable_00008",
+        "effency": 75,
+        "cost": 50,
+        "duration": 7
+      },
+      {
+        "image": "instrument_enable_00009",
+        "effency": 75,
+        "cost": 50,
+        "duration": 10
+      },
+      {
+        "image": "instrument_enable_00010",
+        "effency": 80,
+        "cost": 60,
+        "duration": 10
+      },
+      {
+        "image": "instrument_enable_00011",
+        "effency": 100,
+        "cost": 80,
+        "duration": 12
+      },
+      {
+        "image": "instrument_enable_00012",
+        "effency": 130,
+        "cost": 100,
+        "duration": 14
+      }
+    ],
+    "buildings": {
+      "texture": "2000/buildings.png",
+      "atlas": "2000/buildings.json",
+      "locations": [
+        {
+          "x": "0.287",
+          "y": "0.832",
+          "building": "object_00001"
+        },
+        {
+          "x": "0.922",
+          "y": "0.599",
+          "building": "object_00002"
+        },
+        {
+          "x": "0.099",
+          "y": "-0.223",
+          "building": "object_00002"
+        },
+        {
+          "x": "0.251",
+          "y": "-0.020",
+          "building": "object_00003"
+        },
+        {
+          "x": "-0.026",
+          "y": "-0.021",
+          "building": "object_00004"
+        },
+        {
+          "x": "0.367",
+          "y": "0.238",
+          "building": "object_00012"
+        },
+        {
+          "x": "0.551",
+          "y": "-0.086",
+          "building": "object_00008"
+        },
+        {
+          "x": "0.845",
+          "y": "-0.185",
+          "building": "object_00007"
+        },
+        {
+          "x": "0.485",
+          "y": "0.307",
+          "building": "object_00011"
+        },
+        {
+          "x": "0.302",
+          "y": "0.389",
+          "building": "object_00013"
+        },
+        {
+          "x": "0.137",
+          "y": "0.463",
+          "building": "object_00017"
+        },
+        {
+          "x": "0.514",
+          "y": "0.602",
+          "building": "object_00009"
+        },
+        {
+          "x": "0.607",
+          "y": "0.526",
+          "building": "object_00010"
+        },
+        {
+          "x": "0.761",
+          "y": "0.122",
+          "building": "object_00018"
+        },
+        {
+          "x": "0.703",
+          "y": "0.587",
+          "building": "object_00014"
+        },
+        {
+          "x": "0.981",
+          "y": "0.110",
+          "building": "object_00006"
+        }
+      ]
+    }
+  },
+  "2004": {
+    "background": "2004/background.png",
+    "foreground": "2004/trees.png",
+    "levelTimer": 120,
+    "target": 500,
+    "instruments": [
+      {
+        "image": "instrument_enable_00013",
+        "effency": 50,
+        "cost": 1,
+        "duration": 1
+      },
+      {
+        "image": "instrument_enable_00014",
+        "effency": 75,
+        "cost": 50,
+        "duration": 7
+      },
+      {
+        "image": "instrument_enable_00015",
+        "effency": 75,
+        "cost": 50,
+        "duration": 10
+      },
+      {
+        "image": "instrument_enable_00016",
+        "effency": 80,
+        "cost": 60,
+        "duration": 10
+      },
+      {
+        "image": "instrument_enable_00017",
+        "effency": 100,
+        "cost": 80,
+        "duration": 12
+      },
+      {
+        "image": "instrument_enable_00018",
+        "effency": 130,
+        "cost": 100,
+        "duration": 14
+      }
+    ],
+    "buildings": {
+      "texture": "2004/buildings.png",
+      "atlas": "2004/buildings.json",
+      "locations": [
+        {
+          "x": "0.577",
+          "y": "0.002",
+          "building": "object_00002"
+        },
+        {
+          "x": "0.441",
+          "y": "-0.456",
+          "building": "object_00008"
+        },
+        {
+          "x": "0.067",
+          "y": "-0.167",
+          "building": "object_00006"
+        },
+        {
+          "x": "-0.057",
+          "y": "-0.052",
+          "building": "object_00006"
+        },
+        {
+          "x": "0.157",
+          "y": "-0.017",
+          "building": "object_00012"
+        },
+        {
+          "x": "0.480",
+          "y": "0.465",
+          "building": "object_00004"
+        },
+        {
+          "x": "0.887",
+          "y": "0.018",
+          "building": "object_00001"
+        },
+        {
+          "x": "0.750",
+          "y": "0.159",
+          "building": "object_00010"
+        },
+        {
+          "x": "0.949",
+          "y": "0.553",
+          "building": "object_00003"
+        },
+        {
+          "x": "0.351",
+          "y": "0.606",
+          "building": "object_00011"
+        },
+        {
+          "x": "0.563",
+          "y": "0.639",
+          "building": "object_00009"
+        },
+        {
+          "x": "0.381",
+          "y": "0.139",
+          "building": "object_00005"
+        }
+      ]
+    }
+  },
+  "2008": {
+    "background": "2008/background.png",
+    "foreground": "2008/trees.png",
+    "levelTimer": 120,
+    "target": 500,
+    "instruments": [
+      {
+        "image": "instrument_enable_00019",
+        "effency": 50,
+        "cost": 1,
+        "duration": 1
+      },
+      {
+        "image": "instrument_enable_00020",
+        "effency": 75,
+        "cost": 50,
+        "duration": 7
+      },
+      {
+        "image": "instrument_enable_00021",
+        "effency": 75,
+        "cost": 50,
+        "duration": 10
+      },
+      {
+        "image": "instrument_enable_00022",
+        "effency": 80,
+        "cost": 60,
+        "duration": 10
+      },
+      {
+        "image": "instrument_enable_00023",
+        "effency": 100,
+        "cost": 80,
+        "duration": 12
+      },
+      {
+        "image": "instrument_enable_00024",
+        "effency": 130,
+        "cost": 100,
+        "duration": 14
+      }
+    ],
+    "buildings": {
+      "texture": "2008/buildings.png",
+      "atlas": "2008/buildings.json",
+      "locations": [
+        {
+          "x": "0.922",
+          "y": "-0.179",
+          "building": "object_00002"
+        },
+        {
+          "x": "0.814",
+          "y": "0.028",
+          "building": "object_00001"
+        },
+        {
+          "x": "0.496",
+          "y": "0.321",
+          "building": "object_00006"
+        },
+        {
+          "x": "0.940",
+          "y": "0.735",
+          "building": "object_00010"
+        },
+        {
+          "x": "0.415",
+          "y": "-0.172",
+          "building": "object_00003"
+        },
+        {
+          "x": "0.210",
+          "y": "-0.135",
+          "building": "object_00004"
+        },
+        {
+          "x": "0.082",
+          "y": "0.077",
+          "building": "object_00005"
+        },
+        {
+          "x": "0.287",
+          "y": "0.372",
+          "building": "object_00007"
+        },
+        {
+          "x": "0.546",
+          "y": "0.626",
+          "building": "object_00009"
+        },
+        {
+          "x": "0.066",
+          "y": "0.750",
+          "building": "object_00008"
+        }
+      ]
+    }
+  },
+  "2012": {
+    "background": "2012/background.png",
+    "foreground": "2012/trees.png",
+    "levelTimer": 120,
+    "target": 500,
+    "instruments": [
+      {
+        "image": "instrument_enable_00025",
+        "effency": 50,
+        "cost": 1,
+        "duration": 1
+      },
+      {
+        "image": "instrument_enable_00026",
+        "effency": 75,
+        "cost": 50,
+        "duration": 7
+      },
+      {
+        "image": "instrument_enable_00027",
+        "effency": 75,
+        "cost": 50,
+        "duration": 10
+      },
+      {
+        "image": "instrument_enable_00028",
+        "effency": 80,
+        "cost": 60,
+        "duration": 10
+      },
+      {
+        "image": "instrument_enable_00029",
+        "effency": 100,
+        "cost": 80,
+        "duration": 12
+      },
+      {
+        "image": "instrument_enable_00030",
+        "effency": 130,
+        "cost": 100,
+        "duration": 14
+      }
+    ],
+    "buildings": {
+      "texture": "2012/buildings.png",
+      "atlas": "2012/buildings.json",
+      "locations": [
+        {
+          "x": "0.126",
+          "y": "-0.079",
+          "building": "object_00009"
+        },
+        {
+          "x": "0.679",
+          "y": "-0.061",
+          "building": "object_00006"
+        },
+        {
+          "x": "0.289",
+          "y": "0.034",
+          "building": "object_00008"
+        },
+        {
+          "x": "0.482",
+          "y": "-0.128",
+          "building": "object_00002"
+        },
+        {
+          "x": "0.159",
+          "y": "0.209",
+          "building": "object_00010"
+        },
+        {
+          "x": "0.025",
+          "y": "0.682",
+          "building": "object_00011"
+        },
+        {
+          "x": "0.378",
+          "y": "0.721",
+          "building": "object_00004"
+        },
+        {
+          "x": "0.643",
+          "y": "0.425",
+          "building": "object_00003"
+        },
+        {
+          "x": "0.854",
+          "y": "0.672",
+          "building": "object_00002"
+        },
+        {
+          "x": "0.990",
+          "y": "0.136",
+          "building": "object_00001"
+        }
+      ]
+    },
+    "multiply": {}
+  },
+  "2018": {
+    "background": "2018/background.png",
+    "foreground": "2018/trees.png",
+    "levelTimer": 120,
+    "target": 500,
+    "instruments": [
+      {
+        "image": "instrument_enable_00031",
+        "effency": 50,
+        "cost": 1,
+        "duration": 1
+      },
+      {
+        "image": "instrument_enable_00032",
+        "effency": 75,
+        "cost": 50,
+        "duration": 7
+      },
+      {
+        "image": "instrument_enable_00033",
+        "effency": 75,
+        "cost": 50,
+        "duration": 10
+      },
+      {
+        "image": "instrument_enable_00034",
+        "effency": 80,
+        "cost": 60,
+        "duration": 10
+      },
+      {
+        "image": "instrument_enable_00035",
+        "effency": 100,
+        "cost": 80,
+        "duration": 12
+      },
+      {
+        "image": "instrument_enable_00036",
+        "effency": 130,
+        "cost": 100,
+        "duration": 14
+      }
+    ],
+    "buildings": {
+      "texture": "2018/buildings.png",
+      "atlas": "2018/buildings.json",
+      "locations": [
+        {
+          "x": "0.027",
+          "y": "0.211",
+          "building": "object_00001"
+        },
+        {
+          "x": "0.304",
+          "y": "-0.245",
+          "building": "object_00006"
+        },
+        {
+          "x": "0.537",
+          "y": "-0.086",
+          "building": "object_00007"
+        },
+        {
+          "x": "0.641",
+          "y": "0.474",
+          "building": "object_00008"
+        },
+        {
+          "x": "0.842",
+          "y": "-0.061",
+          "building": "object_00005"
+        },
+        {
+          "x": "0.953",
+          "y": "0.450",
+          "building": "object_00004"
+        },
+        {
+          "x": "0.517",
+          "y": "0.496",
+          "building": "object_00003"
+        },
+        {
+          "x": "0.343",
+          "y": "0.312",
+          "building": "object_00002"
+        }
+      ]
+    },
+    "multiply": {}
+  }
+}
