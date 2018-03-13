@@ -12,7 +12,7 @@ export default class extends Phaser.State {
   preload () {
     WebFont.load({
       google: {
-        families: ['Roboto:regular:cyrillic']
+        families: ['Roboto:300,700:cyrillic']
       },
       loading: () => console.log('fonts are loading...'),
       active: this.fontsLoaded,

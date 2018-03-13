@@ -3,24 +3,27 @@
     "background": "1996/background.png",
     "foreground": "1996/trees.png",
     "levelTimer": 120,
-    "target": 500,
+    "target": 700,
+    "attendanceMin": 51,
+    "attendanceMax": 62,
     "instruments": [
       {
         "name": "Поклейка листовок «Купи еды в последний раз» по району",
         "image": "instrument_enable_00001",
         "effency": 50,
-        "cost": 35,
-        "duration": 1,
+        "cost": 30,
+        "duration": 3,
         "random": [
           {
-            "chance": 33,
+            "chance": 0,
             "type": "positive",
-            "effency": 50
+            "effency": 0
           },
           {
-            "chance": 33,
+            "message": "У управы дошли руки покрасить перед выборами стены, на которые вы клеили плакаты",
+            "chance": 20,
             "type": "negative",
-            "effency": 50
+            "effency": 16
           },
           {
             "chance": 0,
@@ -31,20 +34,22 @@
       },
       {
         "name": "Распространение газеты «Не дай Бог» по ящикам",
-        "image": "instrument_enable_00002",
-        "effency": 75,
-        "cost": 50,
-        "duration": 7,
+        "image": "instrument_enable_00003",
+        "effency": 60,
+        "cost": 40,
+        "duration": 3,
         "random": [
           {
-            "chance": 33,
+            "message": "Вместе с «Не дай Бог» привезли газету «Не Бог дай», вы вовремя это заметили, вас поощрили",
+            "chance": 20,
             "type": "positive",
-            "effency": 50
+            "effency": 15
           },
           {
-            "chance": 33,
+            "message": "Вместе с «Не дай Бог» привезли газету «Не Бог дай», а вы и не вчитывались",
+            "chance": 20,
             "type": "negative",
-            "effency": 50
+            "effency": 15
           },
           {
             "chance": 0,
@@ -55,20 +60,22 @@
       },
       {
         "name": "Устроить ретроспективу фильмов с Арнольдом Шварценеггером для проголосовавших",
-        "image": "instrument_enable_00003",
+        "image": "instrument_enable_00002",
         "effency": 75,
-        "cost": 60,
-        "duration": 10,
+        "cost": 50,
+        "duration": 3,
         "random": [
           {
-            "chance": 33,
+            "message": "Прознавшие о показе позвонили своим друзьям и позвали бежать на участок, чтобы успеть на вторую серию «Терминатора»",
+            "chance": 20,
             "type": "positive",
-            "effency": 50
+            "effency": 25
           },
           {
-            "chance": 33,
+            "message": "Люди устроили скандал и давку на участке, чтобы посмотреть фильм. Те, кто пришли голосовать не смогли этого сделать",
+            "chance": 20,
             "type": "negative",
-            "effency": 50
+            "effency": 10
           },
           {
             "chance": 0,
@@ -81,18 +88,20 @@
         "name": "Устроить дискотеку «Голосуй или проиграешь» в школе",
         "image": "instrument_enable_00004",
         "effency": 80,
-        "cost": 70,
-        "duration": 10,
+        "cost": 60,
+        "duration": 3,
         "random": [
           {
-            "chance": 33,
+            "message": "Диджей завёл толпу отрывистыми рассуждениями на тему «Серп и молот — смерть и голод»",
+            "chance": 20,
             "type": "positive",
-            "effency": 50
+            "effency": 10
           },
           {
-            "chance": 33,
+            "message": "На входе раздавали флаеры на трёхдневный рейв, который начинался в тот же день неподалёку",
+            "chance": 20,
             "type": "negative",
-            "effency": 50
+            "effency": 10
           },
           {
             "chance": 0,
@@ -104,19 +113,21 @@
       {
         "name": "Собрать ветеранов войны и труда на банкет",
         "image": "instrument_enable_00005",
-        "effency": 100,
+        "effency": 120,
         "cost": 80,
-        "duration": 12,
+        "duration": 3,
         "random": [
           {
-            "chance": 33,
+            "message": "Пенсионеры-реформаторы убедили весь совет ветеранов в пользе демократии",
+            "chance": 20,
             "type": "positive",
-            "effency": 50
+            "effency": 20
           },
           {
-            "chance": 33,
+            "message": "Банкет закончился разговором на тему «раньше было лучше», деньги потрачены впустую",
+            "chance": 20,
             "type": "negative",
-            "effency": 50
+            "effency": 20
           },
           {
             "chance": 0,
@@ -128,24 +139,27 @@
       {
         "name": "Вечер авторской песни в районном военно-патриотическом клубе",
         "image": "instrument_enable_00006",
-        "effency": 130,
+        "effency": 150,
         "cost": 100,
-        "duration": 14,
+        "duration": 3,
         "random": [
           {
-            "chance": 33,
+            "message": "Ваша речь, приверженность поисковому движению и безосновательные обещания сплотили клуб еще сильнее",
+            "chance": 20,
             "type": "positive",
-            "effency": 50
+            "effency": 15
           },
           {
-            "chance": 33,
+            "message": "Часть присутствующих объявила всех выступающих агентами Сиона и показательно вышла из зала на крестный ход",
+            "chance": 20,
             "type": "negative",
-            "effency": 50
+            "effency": 25
           },
           {
-            "chance": 0,
+            "message": "Двое руководителей местного общества «Память» поругались прямо во время концерта, деморализованы все",
+            "chance": 20,
             "type": "negative",
-            "effency": 0
+            "effency": 50
           }
         ]
       }
@@ -216,43 +230,171 @@
     "background": "2000/background.png",
     "foreground": "2000/trees.png",
     "levelTimer": 120,
-    "target": 500,
+    "target": 750,
+    "attendanceMin": 52,
+    "attendanceMax": 64,
     "instruments": [
       {
+        "name": "Заставить районные магазины повесить плакаты",
         "image": "instrument_enable_00007",
         "effency": 50,
-        "cost": 1,
-        "duration": 1
+        "cost": 30,
+        "duration": 3,
+        "random": [
+          {
+            "message": "",
+            "chance": 0,
+            "type": "positive",
+            "effency": 50
+          },
+          {
+            "message": "Плакаты вышли настолько скучными, что покупатели их просто не замечают",
+            "chance": 10,
+            "type": "negative",
+            "effency": 5
+          },
+          {
+            "message": "",
+            "chance": 0,
+            "type": "negative",
+            "effency": 0
+          }
+        ]
       },
       {
+        "name": "Пообещать жильцам капитальный ремонт через ЖЭК",
         "image": "instrument_enable_00008",
-        "effency": 75,
-        "cost": 50,
-        "duration": 7
+        "effency": 60,
+        "cost": 40,
+        "duration": 3,
+        "random": [
+          {
+            "message": "Начальник жэка нашёл нужные слова, жильцы воодушевлены и идут голосовать",
+            "chance": 20,
+            "type": "positive",
+            "effency": 10
+          },
+          {
+            "message": "Тихий старичок с пухлой тетрадью разметал начальника жэка в пух и прах. Жильцы ропщут, понимая обман",
+            "chance": 20,
+            "type": "negative",
+            "effency": 15
+          },
+          {
+            "message": "",
+            "chance": 0,
+            "type": "negative",
+            "effency": 0
+          }
+        ]
       },
       {
+        "name": "Договориться с главврачом больницы о голосовании",
         "image": "instrument_enable_00009",
         "effency": 75,
         "cost": 50,
-        "duration": 10
+        "duration": 3,
+        "random": [
+          {
+            "message": "Главврач положил в больницу всех своих родственников и всех ваших родственников и они проголосовали как надо!",
+            "chance": 20,
+            "type": "positive",
+            "effency": 20
+          },
+          {
+            "message": "Главврач немного переборщил с уговорами и больные все разбежались. Это провал!",
+            "chance": 20,
+            "type": "negative",
+            "effency": 15
+          },
+          {
+            "message": "",
+            "chance": 0,
+            "type": "negative",
+            "effency": 0
+          }
+        ]
       },
       {
+        "name": "Заставить собес обойти всех пенсионеров",
         "image": "instrument_enable_00010",
         "effency": 80,
         "cost": 60,
-        "duration": 10
+        "duration": 3,
+        "random": [
+          {
+            "message": "Собес ответственно подошёл к выполнению задания. Пенсионеры оповещены и им не терпится прийти на участок",
+            "chance": 20,
+            "type": "positive",
+            "effency": 10
+          },
+          {
+            "message": "Сотрудники собеса явно не горели желанием делать дополнительную неоплачиваемую работу и начали жаловаться. Часть пенсионеров решила не идти на выборы",
+            "chance": 20,
+            "type": "negative",
+            "effency": 10
+          },
+          {
+            "message": "",
+            "chance": 0,
+            "type": "negative",
+            "effency": 0
+          }
+        ]
       },
       {
+        "name": "Убедить главного редактора муниципальной газеты",
         "image": "instrument_enable_00011",
-        "effency": 100,
+        "effency": 120,
         "cost": 80,
-        "duration": 12
+        "duration": 3,
+        "random": [
+          {
+            "message": "Главный редактор так хотел отличиться, что даже допечатал тираж на свои деньги",
+            "chance": 20,
+            "type": "positive",
+            "effency": 15
+          },
+          {
+            "message": "Главный редактор записал разговор с вами на диктофон. Его, конечно, сняли, но и газета не вышла",
+            "chance": 20,
+            "type": "negative",
+            "effency": 15
+          },
+          {
+            "message": "",
+            "chance": 0,
+            "type": "negative",
+            "effency": 0
+          }
+        ]
       },
       {
+        "name": "Записать объявление для муниципального транспорта",
         "image": "instrument_enable_00012",
-        "effency": 130,
+        "effency": 150,
         "cost": 100,
-        "duration": 14
+        "duration": 3,
+        "random": [
+          {
+            "message": "Люди напевают предвыборный джингл и семьями, будто зомбированные, идут на избирательный участок",
+            "chance": 20,
+            "type": "positive",
+            "effency": 30
+          },
+          {
+            "message": "Люди не могут слушать одну и ту же запись, они начинают сходить с ума, напевать джингл, но полностью игнорируют его смысл",
+            "chance": 20,
+            "type": "negative",
+            "effency": 30
+          },
+          {
+            "message": "",
+            "chance": 0,
+            "type": "negative",
+            "effency": 0
+          }
+        ]
       }
     ],
     "buildings": {
@@ -346,43 +488,171 @@
     "background": "2004/background.png",
     "foreground": "2004/trees.png",
     "levelTimer": 120,
-    "target": 500,
+    "target": 800,
+    "attendanceMin": 61,
+    "attendanceMax": 78,
     "instruments": [
       {
+        "name": "Составить «списки сторонников»",
         "image": "instrument_enable_00013",
         "effency": 50,
-        "cost": 1,
-        "duration": 1
+        "cost": 30,
+        "duration": 3,
+        "random": [
+          {
+            "message": "У вас получилось не только составить актуальный список, но и припугнуть нелояльных. И все они пошли на выборы",
+            "chance": 20,
+            "type": "positive",
+            "effency": 15
+          },
+          {
+            "message": "Ответственные подошли к такой важной работе спустя рукава. Поручение провалилось",
+            "chance": 20,
+            "type": "negative",
+            "effency": 10
+          },
+          {
+            "message": "",
+            "chance": 0,
+            "type": "negative",
+            "effency": 0
+          }
+        ]
       },
       {
+        "name": "Напечатать поддельную агитацию",
         "image": "instrument_enable_00014",
-        "effency": 75,
-        "cost": 50,
-        "duration": 7
+        "effency": 60,
+        "cost": 40,
+        "duration": 3,
+        "random": [
+          {
+            "message": "Ваши способности в чёрном пиаре оказались очень высоки, листовки сработали на отлично!",
+            "chance": 20,
+            "type": "positive",
+            "effency": 15
+          },
+          {
+            "message": "Вас раскрыли из-за досадной оплошности. Журналисты открыто называют мэрию заказчиком подмётных материалов",
+            "chance": 20,
+            "type": "negative",
+            "effency": 15
+          },
+          {
+            "message": "",
+            "chance": 0,
+            "type": "negative",
+            "effency": 0
+          }
+        ]
       },
       {
+        "name": "Снять ролик для местного телеканала",
         "image": "instrument_enable_00015",
         "effency": 75,
         "cost": 50,
-        "duration": 10
+        "duration": 3,
+        "random": [
+          {
+            "message": "",
+            "chance": 0,
+            "type": "positive",
+            "effency": 50
+          },
+          {
+            "message": "Идея красиво смотрится на бумаге, но местное телевидение почти никто не смотрит",
+            "chance": 10,
+            "type": "negative",
+            "effency": 25
+          },
+          {
+            "message": "",
+            "chance": 0,
+            "type": "negative",
+            "effency": 0
+          }
+        ]
       },
       {
+        "name": "Договориться о голосовании солдат",
         "image": "instrument_enable_00016",
         "effency": 80,
         "cost": 60,
-        "duration": 10
+        "duration": 3,
+        "random": [
+          {
+            "message": "Руководство части откуда-то взяло даже больше солдат, чем у них значится",
+            "chance": 20,
+            "type": "positive",
+            "effency": 30
+          },
+          {
+            "message": "Все солдаты отравились и в части карантин. Так вам сказали. Договорённость провалилась",
+            "chance": 5,
+            "type": "negative",
+            "effency": 50
+          },
+          {
+            "message": "",
+            "chance": 0,
+            "type": "negative",
+            "effency": 0
+          }
+        ]
       },
       {
+        "name": "Провести лотерею от Союза ветеранов войн XX века",
         "image": "instrument_enable_00017",
-        "effency": 100,
+        "effency": 120,
         "cost": 80,
-        "duration": 12
+        "duration": 3,
+        "random": [
+          {
+            "message": "Кому чайник, кому тостер. Любая лотерея привлекает много людей",
+            "chance": 20,
+            "type": "positive",
+            "effency": 30
+          },
+          {
+            "message": "",
+            "chance": 0,
+            "type": "negative",
+            "effency": 50
+          },
+          {
+            "message": "",
+            "chance": 0,
+            "type": "negative",
+            "effency": 0
+          }
+        ]
       },
       {
+        "name": "Встретиться с директорами заводов",
         "image": "instrument_enable_00018",
-        "effency": 130,
+        "effency": 150,
         "cost": 100,
-        "duration": 14
+        "duration": 3,
+        "random": [
+          {
+            "message": "Обещания закрыть глаза на выбросы сработало. Администрация заставила рабочих привести свои семьи и поставила своих наблюдателей",
+            "chance": 20,
+            "type": "positive",
+            "effency": 30
+          },
+          {
+            "message": "Подвоз организовали, но все голосовали как хотели, а не как надо",
+            "chance": 20,
+            "type": "negative",
+            "effency": 30
+          },
+          {
+            "message": "",
+            "chance": 0,
+            "type": "negative",
+            "effency": 0
+          }
+        ]
       }
     ],
     "buildings": {
@@ -456,43 +726,171 @@
     "background": "2008/background.png",
     "foreground": "2008/trees.png",
     "levelTimer": 120,
-    "target": 500,
+    "target": 850,
+    "attendanceMin": 64,
+    "attendanceMax": 74,
     "instruments": [
       {
+        "name": "Изъять агитацию кандидата",
         "image": "instrument_enable_00019",
         "effency": 50,
-        "cost": 1,
-        "duration": 1
+        "cost": 30,
+        "duration": 3,
+        "random": [
+          {
+            "message": "И тираж изъяли и типографию припугнули",
+            "chance": 20,
+            "type": "positive",
+            "effency": 10
+          },
+          {
+            "message": "Кандидат оказался запасливый, напечатал больше",
+            "chance": 20,
+            "type": "negative",
+            "effency": 10
+          },
+          {
+            "message": "",
+            "chance": 0,
+            "type": "negative",
+            "effency": 0
+          }
+        ]
       },
       {
+        "name": "Отправить агитаторов на участки в день голосования",
         "image": "instrument_enable_00020",
-        "effency": 75,
-        "cost": 50,
-        "duration": 7
+        "effency": 60,
+        "cost": 40,
+        "duration": 3,
+        "random": [
+          {
+            "message": "Агитаторы чуть ли не галочки ставили за пришедших. Успех!",
+            "chance": 20,
+            "type": "positive",
+            "effency": 20
+          },
+          {
+            "message": "Наблюдатели позвонили журналистам и всё завертелось! Так грубо уже никто не работает!",
+            "chance": 20,
+            "type": "negative",
+            "effency": 20
+          },
+          {
+            "message": "",
+            "chance": 0,
+            "type": "negative",
+            "effency": 0
+          }
+        ]
       },
       {
+        "name": "Проставить сессию студентам за голосование",
         "image": "instrument_enable_00021",
         "effency": 75,
         "cost": 50,
-        "duration": 10
+        "duration": 3,
+        "random": [
+          {
+            "message": "",
+            "chance": 0,
+            "type": "positive",
+            "effency": 50
+          },
+          {
+            "message": "Студенты возмутились таким попранием свобод и заперлись в общаге. Пока выковыривали, участки закрылись",
+            "chance": 5,
+            "type": "negative",
+            "effency": 20
+          },
+          {
+            "message": "",
+            "chance": 0,
+            "type": "negative",
+            "effency": 0
+          }
+        ]
       },
       {
+        "name": "Разгромить штаб кандидата",
         "image": "instrument_enable_00022",
         "effency": 80,
         "cost": 60,
-        "duration": 10
+        "duration": 3,
+        "random": [
+          {
+            "message": "Испортили технику, украли документацию, картинка получилась даже лучше, чем вы планировали!",
+            "chance": 20,
+            "type": "positive",
+            "effency": 15
+          },
+          {
+            "message": "В помещении стояла сигнализация, на вызов приехала милиция, но почему-то их никто не предупредил",
+            "chance": 20,
+            "type": "negative",
+            "effency": 15
+          },
+          {
+            "message": "",
+            "chance": 0,
+            "type": "negative",
+            "effency": 0
+          }
+        ]
       },
       {
+        "name": "Проголосовать за мёртвых",
         "image": "instrument_enable_00023",
-        "effency": 100,
+        "effency": 120,
         "cost": 80,
-        "duration": 12
+        "duration": 3,
+        "random": [
+          {
+            "message": "",
+            "chance": 0,
+            "type": "positive",
+            "effency": 50
+          },
+          {
+            "message": "Люди увидели роспись за своих умерших родственников и подняли шум — ведь мёртвые не могут голосовать",
+            "chance": 15,
+            "type": "negative",
+            "effency": 30
+          },
+          {
+            "message": "",
+            "chance": 0,
+            "type": "negative",
+            "effency": 0
+          }
+        ]
       },
       {
+        "name": "Снять кандидата",
         "image": "instrument_enable_00024",
-        "effency": 130,
+        "effency": 150,
         "cost": 100,
-        "duration": 14
+        "duration": 3,
+        "random": [
+          {
+            "message": "Избирательная комиссия на всякий случай забраковала подписи половине кандидатов",
+            "chance": 10,
+            "type": "positive",
+            "effency": 50
+          },
+          {
+            "message": "Избирательная комиссия напутала и сняла нужного кандидата-однофамильца. Всё прахом!",
+            "chance": 10,
+            "type": "negative",
+            "effency": 50
+          },
+          {
+            "message": "",
+            "chance": 0,
+            "type": "negative",
+            "effency": 0
+          }
+        ]
       }
     ],
     "buildings": {
@@ -556,43 +954,171 @@
     "background": "2012/background.png",
     "foreground": "2012/trees.png",
     "levelTimer": 120,
-    "target": 500,
+    "target": 900,
+    "attendanceMin": 63,
+    "attendanceMax": 76,
     "instruments": [
       {
+        "name": "Вброс",
         "image": "instrument_enable_00025",
         "effency": 50,
-        "cost": 1,
-        "duration": 1
+        "cost": 30,
+        "duration": 3,
+        "random": [
+          {
+            "message": "Вы решили не платить части вбрасывателей — не пойдут же они в полицию!",
+            "chance": 20,
+            "type": "positive",
+            "effency": 10
+          },
+          {
+            "message": "Журналисты просочились в одну из групп, подготовленных вбрасывать бюллетени. Остальные, впрочем, сделали своё дело",
+            "chance": 20,
+            "type": "negative",
+            "effency": 13
+          },
+          {
+            "message": "",
+            "chance": 0,
+            "type": "negative",
+            "effency": 0
+          }
+        ]
       },
       {
+        "name": "Многократное голосование",
         "image": "instrument_enable_00026",
-        "effency": 75,
-        "cost": 50,
-        "duration": 7
+        "effency": 60,
+        "cost": 40,
+        "duration": 3,
+        "random": [
+          {
+            "message": "",
+            "chance": 0,
+            "type": "positive",
+            "effency": 50
+          },
+          {
+            "message": "Наблюдатели засекли подвоз, стали записывать номера и спугнули преступников. Хорошо, что на соседних участках не было наблюдателей",
+            "chance": 20,
+            "type": "negative",
+            "effency": 15
+          },
+          {
+            "message": "",
+            "chance": 0,
+            "type": "negative",
+            "effency": 0
+          }
+        ]
       },
       {
+        "name": "Удалить наблюдателей",
         "image": "instrument_enable_00027",
         "effency": 75,
         "cost": 50,
-        "duration": 10
+        "duration": 3,
+        "random": [
+          {
+            "message": "Только всех удалили, приехали вбросчики. Очень эффективно получилось!",
+            "chance": 20,
+            "type": "positive",
+            "effency": 20
+          },
+          {
+            "message": "Пока пытались выгнать всех наблюдателей, приехал оппозиционный депутат и устроил скандал",
+            "chance": 20,
+            "type": "negative",
+            "effency": 20
+          },
+          {
+            "message": "",
+            "chance": 0,
+            "type": "negative",
+            "effency": 0
+          }
+        ]
       },
       {
+        "name": "Подделать протоколы",
         "image": "instrument_enable_00028",
         "effency": 80,
         "cost": 60,
-        "duration": 10
+        "duration": 3,
+        "random": [
+          {
+            "message": "",
+            "chance": 0,
+            "type": "positive",
+            "effency": 50
+          },
+          {
+            "message": "Как ни пытался председатель комиссии свести цифры, получалось очень плохо",
+            "chance": 20,
+            "type": "negative",
+            "effency": 15
+          },
+          {
+            "message": "",
+            "chance": 0,
+            "type": "negative",
+            "effency": 0
+          }
+        ]
       },
       {
+        "name": "Бюджетный шантаж",
         "image": "instrument_enable_00029",
-        "effency": 100,
+        "effency": 120,
         "cost": 80,
-        "duration": 12
+        "duration": 3,
+        "random": [
+          {
+            "message": "Все, абсолютно все бюджетники пришли и привели свои семьи голосовать. Хорошо их запугали!",
+            "chance": 20,
+            "type": "positive",
+            "effency": 30
+          },
+          {
+            "message": "Как бы вы ни пугали бюджетников, большого эффекта это не дало. Нужно лучше пугать!",
+            "chance": 20,
+            "type": "negative",
+            "effency": 20
+          },
+          {
+            "message": "",
+            "chance": 0,
+            "type": "negative",
+            "effency": 0
+          }
+        ]
       },
       {
+        "name": "Подкуп избирателей",
         "image": "instrument_enable_00030",
-        "effency": 130,
+        "effency": 150,
         "cost": 100,
-        "duration": 14
+        "duration": 3,
+        "random": [
+          {
+            "message": "Слава бежит впереди вас, люди хотят обменять свои голоса на деньги целыми районами!",
+            "chance": 20,
+            "type": "positive",
+            "effency": 40
+          },
+          {
+            "message": "Вы, конечно, придумали эффективно, но полиция всё-таки нашла признаки уголовного преступления. Вам-то ничего не грозит, но части голосов уже не будет",
+            "chance": 20,
+            "type": "negative",
+            "effency": 30
+          },
+          {
+            "message": "",
+            "chance": 0,
+            "type": "negative",
+            "effency": 0
+          }
+        ]
       }
     ],
     "buildings": {
@@ -657,43 +1183,171 @@
     "background": "2018/background.png",
     "foreground": "2018/trees.png",
     "levelTimer": 120,
-    "target": 500,
+    "target": 950,
+    "attendanceMin": 68,
+    "attendanceMax": 87,
     "instruments": [
       {
+        "name": "Сделать смс-рассылку",
         "image": "instrument_enable_00031",
         "effency": 50,
-        "cost": 1,
-        "duration": 1
+        "cost": 30,
+        "duration": 3,
+        "random": [
+          {
+            "message": "",
+            "chance": 0,
+            "type": "positive",
+            "effency": 50
+          },
+          {
+            "message": "",
+            "chance": 0,
+            "type": "negative",
+            "effency": 50
+          },
+          {
+            "message": "",
+            "chance": 0,
+            "type": "negative",
+            "effency": 0
+          }
+        ]
       },
       {
+        "name": "Устроить конкурс селфи «Выборач»",
         "image": "instrument_enable_00032",
-        "effency": 75,
-        "cost": 50,
-        "duration": 7
+        "effency": 60,
+        "cost": 40,
+        "duration": 3,
+        "random": [
+          {
+            "message": "",
+            "chance": 0,
+            "type": "positive",
+            "effency": 50
+          },
+          {
+            "message": "",
+            "chance": 0,
+            "type": "negative",
+            "effency": 50
+          },
+          {
+            "message": "",
+            "chance": 0,
+            "type": "negative",
+            "effency": 0
+          }
+        ]
       },
       {
+        "name": "Снять ролик про гея на передержке",
         "image": "instrument_enable_00033",
         "effency": 75,
         "cost": 50,
-        "duration": 10
+        "duration": 3,
+        "random": [
+          {
+            "message": "",
+            "chance": 0,
+            "type": "positive",
+            "effency": 50
+          },
+          {
+            "message": "",
+            "chance": 0,
+            "type": "negative",
+            "effency": 50
+          },
+          {
+            "message": "",
+            "chance": 0,
+            "type": "negative",
+            "effency": 0
+          }
+        ]
       },
       {
+        "name": "Назначить референдум о благоустройстве",
         "image": "instrument_enable_00034",
         "effency": 80,
         "cost": 60,
-        "duration": 10
+        "duration": 3,
+        "random": [
+          {
+            "message": "",
+            "chance": 0,
+            "type": "positive",
+            "effency": 50
+          },
+          {
+            "message": "",
+            "chance": 0,
+            "type": "negative",
+            "effency": 50
+          },
+          {
+            "message": "",
+            "chance": 0,
+            "type": "negative",
+            "effency": 0
+          }
+        ]
       },
       {
+        "name": "Поквартирный обход каждого избирателя",
         "image": "instrument_enable_00035",
-        "effency": 100,
+        "effency": 120,
         "cost": 80,
-        "duration": 12
+        "duration": 3,
+        "random": [
+          {
+            "message": "",
+            "chance": 0,
+            "type": "positive",
+            "effency": 50
+          },
+          {
+            "message": "",
+            "chance": 0,
+            "type": "negative",
+            "effency": 50
+          },
+          {
+            "message": "",
+            "chance": 0,
+            "type": "negative",
+            "effency": 0
+          }
+        ]
       },
       {
+        "name": "Построить фабрику троллей",
         "image": "instrument_enable_00036",
-        "effency": 130,
+        "effency": 150,
         "cost": 100,
-        "duration": 14
+        "duration": 3,
+        "random": [
+          {
+            "message": "",
+            "chance": 0,
+            "type": "positive",
+            "effency": 50
+          },
+          {
+            "message": "",
+            "chance": 0,
+            "type": "negative",
+            "effency": 50
+          },
+          {
+            "message": "",
+            "chance": 0,
+            "type": "negative",
+            "effency": 0
+          }
+        ]
       }
     ],
     "buildings": {
@@ -716,9 +1370,9 @@
           "building": "object_00007"
         },
         {
-          "x": "0.641",
-          "y": "0.474",
-          "building": "object_00008"
+          "x": "0.660",
+          "y": "0.319",
+          "building": "object_00015"
         },
         {
           "x": "0.842",

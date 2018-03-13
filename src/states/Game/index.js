@@ -4,6 +4,7 @@ import Model from './model'
 import Map from './Map'
 import UI from './UI'
 import Admin from './Admin'
+import Countdown from './countdown'
 
 export default class extends Phaser.State {
   init () {}
@@ -11,13 +12,12 @@ export default class extends Phaser.State {
   createTimer (seconds) {
     const { levelTimer } = this.game.levelData
 
-    this.countdown = this.game.time.create()
-    this.timerEvent = this.countdown.add(
+    this.restGameTime = this.game.time.create()
+    this.timerEvent = this.restGameTime.add(
       Phaser.Timer.SECOND * levelTimer,
       () => { this.onSessionEnd.dispatch() },
       this
     )
-    this.countdown.start()
   }
 
   preload () {
@@ -46,6 +46,8 @@ export default class extends Phaser.State {
     }, this)
 
     this.game.houses = levelData.buildings.locations
+
+    console.log(this.game.attendance)
 
     this.keyRestart = this.game.input.keyboard.addKey(Phaser.Keyboard.R)
     this.keyRestart.onDown.add(() => {
@@ -101,28 +103,58 @@ export default class extends Phaser.State {
       this.model.amount += 1 * this.multiply.clicks
     }, this)
 
-    this.ui.buttons.onActivateInstrument.add((cost, effency) => {
+    this.ui.buttons.onActivateInstrument.add((cost, effency, duration) => {
       console.log(this.model.amount, cost)
       if (this.model.amount < cost) return false
       this.model.amount -= cost // * this.multiply.cost
-      this.model.voterTurnout += effency // * this.multiply.effency
+      // const _delta = ((3000 / 6) / effency)
+      // var _timer = this.game.time.create(false)
+      // var _effency = 0
+      // var _counter = 0
+
+      for (var i = 0; i < effency; i++) {
+        setTimeout(() => {
+          this.model.voterTurnout += 1
+        }, (duration * 1000 / effency) * i)
+      }
+      //   const delta = {
+      //     val: 0,
+      //     target: effency,
+      //     duration
+      //   }
+      //   this.game.add.tween(delta)
+      //   _timer.loop(1000 / 6, () => {
+      //     _effency += _delta
+      //     this.model.voterTurnout += _delta
+      //     if (_effency >= effency) {
+      //       _timer.destroy()
+      //       _timer = undefined
+      //     }
+      //   }, this)
+      //   _timer.start()
+      //   // * this.multiply.effency
       this.ui.updateAmount(this.model.amount)
     }, this)
   }
 
   create () {
     this.map = this.add.existing(new Map(this.game))
-    this.ui = this.add.existing(new UI(this.game))
-    this.createModel()
-    this.createUi()
-    if (__DEV__) {
-      if (!this.admin) this.admin = new Admin(this.game)
-    }
+    this.countdown = new Countdown(this.game)
+    this.countdown.onFinish.add(() => {
+      this.ui = this.add.existing(new UI(this.game))
+      this.createModel()
+      this.createUi()
+      this.restGameTime.start()
+    }, this)
+    this.countdown.startTimer()
+    // if (__DEV__) {
+    if (!this.admin) this.admin = new Admin(this.game)
+    // }
   }
 
   update () {
-    if (this.timerEvent.delay > this.countdown.ms) {
-      const deltatime = this.timerEvent.delay - this.countdown.ms
+    if (this.ui && this.timerEvent.delay > this.restGameTime.ms) {
+      const deltatime = this.timerEvent.delay - this.restGameTime.ms
       this.ui.updateTimer(deltatime)
     }
   }

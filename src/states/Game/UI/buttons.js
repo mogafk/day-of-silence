@@ -47,7 +47,7 @@ export default class extends Phaser.Group {
 
       button.showHint.add(props => { showCard(props) }, this)
       button.onPressed.add(() => {
-        this.onActivateInstrument.dispatch(el.cost, el.effency)
+        this.onActivateInstrument.dispatch(el.cost, el.effency, el.duration)
         const randomEvent = generateRandomEvent(el.random)
         if (randomEvent) this.onRandomEvent.dispatch(randomEvent)
       }, this)

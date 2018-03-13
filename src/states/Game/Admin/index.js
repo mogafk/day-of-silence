@@ -1,9 +1,9 @@
-// import Phaser from 'phaser'
+import Phaser from 'phaser'
 import dat from 'dat.gui'
 
 export default class {
   constructor (game) {
-    const { levelData } = game
+    const { levelData, levelKey } = game
     this.gui = new dat.GUI()
 
     this.gui.add(levelData, 'levelTimer')
@@ -46,5 +46,12 @@ export default class {
     _folder2.add(levelData.multiply, 'fortunePositive')
 
     this.gui.remember(levelData)
+
+    this.keySave = game.input.keyboard.addKey(Phaser.Keyboard.S)
+    this.keySave.onDown.add(() => {
+      const _obj = {}
+      _obj[levelKey] = levelData
+      console.log(JSON.stringify(_obj))
+    }, this)
   }
 }

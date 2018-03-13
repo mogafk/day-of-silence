@@ -38,12 +38,12 @@ export default class extends Phaser.Sprite {
     const showOut = game.make.tween(this)
       .to({ x: target.x, y: target.y }, 1000, Phaser.Easing.Back.In, false, 1000)
     const showOutScale = game.make.tween(this.scale)
-      .to({x: 0.1, y: 0.1}, 1000, Phaser.Easing.Back.In, false)
-    const showOutAlpha = game.make.tween(this)
-      .to({alpha: 0.75}, 1000, Phaser.Easing.Linear.None, false)
+      .to({x: 0.1, y: 0.1}, 750, Phaser.Easing.Back.In, false)
+    // const showOutAlpha = game.make.tween(this)
+    //   .to({alpha: 0.75}, 750, Phaser.Easing.Linear.None, false)
     showOut.onStart.add(() => {
       showOutScale.start()
-      showOutAlpha.start()
+      // showOutAlpha.start()
     }, this)
     showOut.onComplete.add(() => {
       this.destroy()

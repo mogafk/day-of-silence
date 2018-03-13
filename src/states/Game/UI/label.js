@@ -1,55 +1,31 @@
 import Phaser from 'phaser'
 const TEXT_STYLE = (game) => {
   return {
-    font: `bold ${game.camera.height * 0.1}px Roboto`,
+    font: `bold ${game.camera.height * 0.075}px Roboto`,
     fill: 'white',
     align: 'center',
-    stroke: '#000000',
-    strokeThickness: game.camera.height * 0.02
+    // stroke: '#000000',
+    // strokeThickness: game.camera.height * 0.01
   }
 }
 
 export default class extends Phaser.Text {
-  constructor (game, x, y, percentage = 33) {
+  constructor (game, x, y) {
     super(game, x, y, 0, TEXT_STYLE(game))
-    this.anchor.setTo(0.5, 1)
+    this.anchor.setTo(0.5)
 
-    this.percentage = percentage
-
-    this.fillable = this.addChild(game.make.text(0, 0, 0, TEXT_STYLE(game)))
-    this.fillable.fill = 'red'
-    this.fillable.anchor.setTo(0.5, 1)
-
-    this._cropRectangle = new Phaser.Rectangle(0, 25, this.width, this.height - 25)
-
-    // this.refreshCrop = () => {
-    //   this._cropRectangle.width = this.width
-    //   this._cropRectangle.height = this.height - 25  //this.height * this.percentage
-    //   this.fillable.crop(this._cropRectangle)
-    //   this.fillable.updateCrop()
-    // }
-
-    // this.refreshCrop()
+    this.shadowFill = true
+    this.shadowColor = '#20266a'
+    this.shadowBlur = 20
+    this.shadowOffsetX = 0
+    this.shadowOffsetY = 0
+    // this.setTextBounds(this.x - 50, this.y-50, this.width + 50, this.height + 50)
 
     this.updateTextView = val => {
-      this.text = val
+      this.text = `  ${val}  `
       if (this.additional) this.text += this.additional
-      if (this.fillable) this.fillable.text = this.text
-      // this.refreshCrop()
-    }    
+    }
   }
 
-  setFillerPercentage (percents) {
-    this.percentage = percents
-  }
-
-  update () {
-    this._cropRectangle.width = this.width
-    this._cropRectangle.height = this.height * 0.5  //this.height * this.percentage
-    this.fillable.crop(this._cropRectangle)
-    this.fillable.updateCrop()
-    // e.height = this.height - this._height.h
-    // this.fillable.y = this.height
-
-  }
+  update () {}
 }

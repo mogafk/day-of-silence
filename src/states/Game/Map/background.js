@@ -1,5 +1,5 @@
 import Phaser from 'phaser'
-import Cortege from './cortege'
+// import Cortege from './cortege'
 
 export default class extends Phaser.Sprite {
   constructor (game) {
@@ -7,10 +7,10 @@ export default class extends Phaser.Sprite {
     this.anchor.setTo(0.5)
     this.scale.setTo(this.game.scaleMap)
 
-    this.cortege = this.addChild(new Cortege(game))
+    // this.cortege = this.addChild(new Cortege(game))
   }
 
   update () {
-    this.cortege.update()
+    // this.cortege.update()
   }
 }

@@ -27,6 +27,7 @@ export default class extends Phaser.State {
       _button.onInputUp.add(() => {
         this.game.levelData = levels[el]
         this.game.levelKey = el
+        this.game.attendance = this.game.rnd.integerInRange(this.game.levelData.attendanceMin, this.game.levelData.attendanceMax)
         console.log('gamedata:', this.game.levelData)
         if (__DEV__ && this.game.input.keyboard.isDown(Phaser.Keyboard.SHIFT)) {
           this.state.start('MapEditor')
