@@ -16,7 +16,8 @@ class Game extends Phaser.Game {
     _w / 16 < _h / 9
       ? _h = _w * (9 / 16)
       : _w = _h * (16 / 9)
-    super(_w, _h, Phaser.WebGL, 'content', null)
+      
+    super(_w, _h, Phaser.WebGL, document.querySelector('.js-game-container'), null)
 
     this.pixelRatio = 1 //window.devicePixelRatio
 
@@ -33,7 +34,9 @@ class Game extends Phaser.Game {
   }
 }
 
-window.game = new Game()
+window.protestGameInit = function() {
+  window.game = new Game()
+}
 
 if (window.cordova) {
   var app = {
