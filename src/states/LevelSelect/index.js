@@ -2,6 +2,7 @@
 import Phaser from 'phaser'
 import levels from '.././levels.json'
 import Card from '.././Game/UI/card'
+import CardYear from '.././Game/UI/card-carousel'
 import Info from '.././Game/UI/info'
 import Store from '.././Store'
 
@@ -19,6 +20,7 @@ export default class extends Phaser.State {
 
     this.game.load.image('ui-level-select-button', 'ui/level-select-button.png')
     this.game.load.atlasJSONHash('ui-folders', 'ui/folders.png', 'ui/folders.json')
+    this.game.load.atlasJSONHash('ui-numbers', 'ui/numbers.png', 'ui/numbers.json')
   }
 
   create () {
@@ -64,15 +66,24 @@ export default class extends Phaser.State {
       //   effency,
       //   cost
       // })
+      const card = new CardYear({ game: this.game, text: 'вводный текст', icon: this.store.getLevelByKey(this.game.levelKey) })
+      this.game.add.existing(card)
+      card.showAsTiker()
+      card.x += 0
+      card.y += 25
+      card.offsetX = card.width * 8
+      card.offsetSpeed = 1
+      card.image.scale.setTo(1)
+      cardGroup.addChild(card)
 
       for (var i = 0; i < 5; i++) {
         const {name: text, image: icon, effency, cost} = levels[year].instruments[i]
         const card = new Card({ game: this.game, text, icon, effency, cost })
         this.game.add.existing(card)
         card.showAsTiker()
-        card.x += 300 + i * card.width
+        card.x += (i + 1) * card.width
         card.y += 25
-        card.offsetX = 3500
+        card.offsetX = card.width * 8
         card.offsetSpeed = 1
         card.image.scale.setTo(1.4)
         cardGroup.addChild(card)

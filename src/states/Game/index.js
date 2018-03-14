@@ -48,6 +48,7 @@ export default class extends Phaser.State {
         if (el.clicks) this.game.multiply.click *= el.clicks
         if (el.duration) this.game.multiply.duration -= el.duration
         if (el.handicap) this.game.multiply.handicap += el.handicap
+        if (el.time) this.game.multiply.time += el.time
         if (el.fortuneNegative) this.game.multiply.fortuneNegative -= el.fortuneNegative
         if (el.fortunePositive) this.game.multiply.fortunePositive += el.fortunePositive
       })
@@ -199,6 +200,7 @@ export default class extends Phaser.State {
 
   SessionEnd () {
     this.restGameTime.stop()
+    this.ui.updateTimer(0)
     this.game.add.existing(new Modal(this.game))
     // const endGameText = 'Ваше время вышло.\nВам не удалось собрать явку и вы сорвали выборы!'
     // const info = this.game.add.existing(new Info({game: this.game, text: endGameText, type: 'negative'}))
@@ -228,6 +230,7 @@ export default class extends Phaser.State {
 
   SessionWon () {
     this.restGameTime.stop()
+    this.ui.updateTimer(0)
     this.map.cortegeStart()
     this.map.cortegeFinish.add(() => this.selectMultiplicators(), this)
     this.modalOverlay = this.game.add.existing(new Modal(this.game))
@@ -235,9 +238,11 @@ export default class extends Phaser.State {
   }
 
   update () {
-    if (this.ui && this.timerEvent.delay > this.restGameTime.ms) {
-      const deltatime = this.timerEvent.delay - this.restGameTime.ms
-      this.ui.updateTimer(deltatime)
+    if (this.restGameTime.running) {
+      if (this.ui && this.timerEvent.delay > this.restGameTime.ms) {
+        const deltatime = this.timerEvent.delay - this.restGameTime.ms
+        this.ui.updateTimer(deltatime)
+      }
     }
   }
 
