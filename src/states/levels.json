@@ -13,6 +13,7 @@
         "image": "instrument_enable_00001",
         "effency": 50,
         "cost": 30,
+        "recovery": 0,
         "duration": 3,
         "random": [
           {
@@ -38,6 +39,7 @@
         "image": "instrument_enable_00003",
         "effency": 60,
         "cost": 40,
+        "recovery": 0,
         "duration": 3,
         "random": [
           {
@@ -64,6 +66,7 @@
         "image": "instrument_enable_00002",
         "effency": 75,
         "cost": 50,
+        "recovery": 0,
         "duration": 3,
         "random": [
           {
@@ -90,6 +93,7 @@
         "image": "instrument_enable_00004",
         "effency": 95,
         "cost": 60,
+        "recovery": 0,
         "duration": 3,
         "random": [
           {
@@ -116,6 +120,7 @@
         "image": "instrument_enable_00005",
         "effency": 120,
         "cost": 80,
+        "recovery": 0,
         "duration": 3,
         "random": [
           {
@@ -142,6 +147,7 @@
         "image": "instrument_enable_00006",
         "effency": 150,
         "cost": 90,
+        "recovery": 0,
         "duration": 3,
         "random": [
           {
@@ -241,6 +247,7 @@
         "image": "instrument_enable_00007",
         "effency": 50,
         "cost": 30,
+        "recovery": 0,
         "duration": 3,
         "random": [
           {
@@ -268,6 +275,7 @@
         "image": "instrument_enable_00008",
         "effency": 60,
         "cost": 40,
+        "recovery": 0,
         "duration": 3,
         "random": [
           {
@@ -295,6 +303,7 @@
         "image": "instrument_enable_00009",
         "effency": 75,
         "cost": 50,
+        "recovery": 0,
         "duration": 3,
         "random": [
           {
@@ -322,6 +331,7 @@
         "image": "instrument_enable_00010",
         "effency": 95,
         "cost": 60,
+        "recovery": 0,
         "duration": 3,
         "random": [
           {
@@ -349,6 +359,7 @@
         "image": "instrument_enable_00011",
         "effency": 120,
         "cost": 80,
+        "recovery": 0,
         "duration": 3,
         "random": [
           {
@@ -376,6 +387,7 @@
         "image": "instrument_enable_00012",
         "effency": 150,
         "cost": 90,
+        "recovery": 0,
         "duration": 3,
         "random": [
           {
@@ -500,6 +512,7 @@
         "image": "instrument_enable_00013",
         "effency": 50,
         "cost": 30,
+        "recovery": 0,
         "duration": 3,
         "random": [
           {
@@ -527,6 +540,7 @@
         "image": "instrument_enable_00014",
         "effency": 60,
         "cost": 40,
+        "recovery": 0,
         "duration": 3,
         "random": [
           {
@@ -554,6 +568,7 @@
         "image": "instrument_enable_00015",
         "effency": 75,
         "cost": 50,
+        "recovery": 0,
         "duration": 3,
         "random": [
           {
@@ -581,6 +596,7 @@
         "image": "instrument_enable_00016",
         "effency": 95,
         "cost": 60,
+        "recovery": 0,
         "duration": 3,
         "random": [
           {
@@ -608,6 +624,7 @@
         "image": "instrument_enable_00017",
         "effency": 120,
         "cost": 80,
+        "recovery": 0,
         "duration": 3,
         "random": [
           {
@@ -635,6 +652,7 @@
         "image": "instrument_enable_00018",
         "effency": 150,
         "cost": 90,
+        "recovery": 0,
         "duration": 3,
         "random": [
           {
@@ -739,6 +757,7 @@
         "image": "instrument_enable_00019",
         "effency": 50,
         "cost": 30,
+        "recovery": 0,
         "duration": 3,
         "random": [
           {
@@ -766,6 +785,7 @@
         "image": "instrument_enable_00020",
         "effency": 60,
         "cost": 40,
+        "recovery": 0,
         "duration": 3,
         "random": [
           {
@@ -793,6 +813,7 @@
         "image": "instrument_enable_00021",
         "effency": 75,
         "cost": 50,
+        "recovery": 0,
         "duration": 3,
         "random": [
           {
@@ -820,6 +841,7 @@
         "image": "instrument_enable_00022",
         "effency": 95,
         "cost": 60,
+        "recovery": 0,
         "duration": 3,
         "random": [
           {
@@ -847,6 +869,7 @@
         "image": "instrument_enable_00023",
         "effency": 120,
         "cost": 80,
+        "recovery": 0,
         "duration": 3,
         "random": [
           {
@@ -874,6 +897,7 @@
         "image": "instrument_enable_00024",
         "effency": 150,
         "cost": 90,
+        "recovery": 0,
         "duration": 3,
         "random": [
           {
@@ -968,6 +992,7 @@
         "image": "instrument_enable_00025",
         "effency": 50,
         "cost": 30,
+        "recovery": 0,
         "duration": 3,
         "random": [
           {
@@ -995,6 +1020,7 @@
         "image": "instrument_enable_00026",
         "effency": 60,
         "cost": 40,
+        "recovery": 0,
         "duration": 3,
         "random": [
           {
@@ -1022,6 +1048,7 @@
         "image": "instrument_enable_00027",
         "effency": 75,
         "cost": 50,
+        "recovery": 0,
         "duration": 3,
         "random": [
           {
@@ -1049,6 +1076,7 @@
         "image": "instrument_enable_00028",
         "effency": 95,
         "cost": 60,
+        "recovery": 0,
         "duration": 3,
         "random": [
           {
@@ -1076,6 +1104,7 @@
         "image": "instrument_enable_00029",
         "effency": 120,
         "cost": 80,
+        "recovery": 0,
         "duration": 3,
         "random": [
           {
@@ -1103,6 +1132,7 @@
         "image": "instrument_enable_00030",
         "effency": 150,
         "cost": 90,
+        "recovery": 0,
         "duration": 3,
         "random": [
           {
@@ -1198,6 +1228,7 @@
         "image": "instrument_enable_00031",
         "effency": 50,
         "cost": 30,
+        "recovery": 0,
         "duration": 3,
         "random": [
           {
@@ -1225,6 +1256,7 @@
         "image": "instrument_enable_00032",
         "effency": 60,
         "cost": 40,
+        "recovery": 0,
         "duration": 3,
         "random": [
           {
@@ -1252,6 +1284,7 @@
         "image": "instrument_enable_00033",
         "effency": 75,
         "cost": 50,
+        "recovery": 0,
         "duration": 3,
         "random": [
           {
@@ -1279,6 +1312,7 @@
         "image": "instrument_enable_00034",
         "effency": 95,
         "cost": 60,
+        "recovery": 0,
         "duration": 3,
         "random": [
           {
@@ -1306,6 +1340,7 @@
         "image": "instrument_enable_00035",
         "effency": 120,
         "cost": 80,
+        "recovery": 0,
         "duration": 3,
         "random": [
           {
@@ -1333,6 +1368,7 @@
         "image": "instrument_enable_00036",
         "effency": 150,
         "cost": 90,
+        "recovery": 0,
         "duration": 3,
         "random": [
           {
