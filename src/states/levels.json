@@ -88,7 +88,7 @@
       {
         "name": "Устроить дискотеку «Голосуй или проиграешь» в школе",
         "image": "instrument_enable_00004",
-        "effency": 80,
+        "effency": 95,
         "cost": 60,
         "duration": 3,
         "random": [
@@ -115,7 +115,7 @@
         "name": "Собрать ветеранов войны и труда на банкет",
         "image": "instrument_enable_00005",
         "effency": 120,
-        "cost": 95,
+        "cost": 80,
         "duration": 3,
         "random": [
           {
@@ -320,7 +320,7 @@
       {
         "name": "Заставить собес обойти всех пенсионеров",
         "image": "instrument_enable_00010",
-        "effency": 80,
+        "effency": 95,
         "cost": 60,
         "duration": 3,
         "random": [
@@ -348,7 +348,7 @@
         "name": "Убедить главного редактора муниципальной газеты",
         "image": "instrument_enable_00011",
         "effency": 120,
-        "cost": 95,
+        "cost": 80,
         "duration": 3,
         "random": [
           {
@@ -579,7 +579,7 @@
       {
         "name": "Договориться о голосовании солдат",
         "image": "instrument_enable_00016",
-        "effency": 80,
+        "effency": 95,
         "cost": 60,
         "duration": 3,
         "random": [
@@ -607,7 +607,7 @@
         "name": "Провести лотерею от Союза ветеранов войн XX века",
         "image": "instrument_enable_00017",
         "effency": 120,
-        "cost": 95,
+        "cost": 80,
         "duration": 3,
         "random": [
           {
@@ -818,7 +818,7 @@
       {
         "name": "Разгромить штаб кандидата",
         "image": "instrument_enable_00022",
-        "effency": 80,
+        "effency": 95,
         "cost": 60,
         "duration": 3,
         "random": [
@@ -846,7 +846,7 @@
         "name": "Проголосовать за мёртвых",
         "image": "instrument_enable_00023",
         "effency": 120,
-        "cost": 95,
+        "cost": 80,
         "duration": 3,
         "random": [
           {
@@ -1047,7 +1047,7 @@
       {
         "name": "Подделать протоколы",
         "image": "instrument_enable_00028",
-        "effency": 80,
+        "effency": 95,
         "cost": 60,
         "duration": 3,
         "random": [
@@ -1075,7 +1075,7 @@
         "name": "Бюджетный шантаж",
         "image": "instrument_enable_00029",
         "effency": 120,
-        "cost": 95,
+        "cost": 80,
         "duration": 3,
         "random": [
           {
@@ -1277,7 +1277,7 @@
       {
         "name": "Назначить референдум о благоустройстве",
         "image": "instrument_enable_00034",
-        "effency": 80,
+        "effency": 95,
         "cost": 60,
         "duration": 3,
         "random": [
@@ -1305,7 +1305,7 @@
         "name": "Поквартирный обход каждого избирателя",
         "image": "instrument_enable_00035",
         "effency": 120,
-        "cost": 95,
+        "cost": 80,
         "duration": 3,
         "random": [
           {
