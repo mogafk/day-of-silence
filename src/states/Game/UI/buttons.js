@@ -2,6 +2,7 @@ import Phaser from 'phaser'
 import InstrumentButton from './button'
 import Card from './card'
 import Badge from './button-bage'
+import Flier from './flier'
 
 export default class extends Phaser.Group {
   constructor (game) {
@@ -22,7 +23,9 @@ export default class extends Phaser.Group {
         { game, x, y, cost, effency, icon, duration, name, _idx: idx }
       ))
 
-      button.addChild(new Badge(game, 0, 50, cost, effency))
+      const badge = button.addChild(new Badge(game, 0, 50, cost, effency))
+      button.onEnableState.add(() => { badge.setEnableState() }, this)
+      button.onDisableState.add(() => { badge.setDisableState() }, this)
 
       const showCard = props => {
         const { icon, cost, effency, name: text } = props
@@ -65,6 +68,14 @@ export default class extends Phaser.Group {
       button.showHint.add(props => { showCard(props) }, this)
       button.onPressed.add(() => {
         this.onActivateInstrument.dispatch(el.cost, el.effency, el.duration)
+        for (let i = 0; i < 5; i++) {
+          setTimeout(() => {
+            const target = { x: this.game.scaleMap * 1.6 * 300, y: 50 * this.game.scaleMap }
+            const flier = new Flier(game, button.x, button.y, target)
+            this.addChild(flier)
+          }, 50 * i)
+        }
+
         const randomEvent = generateRandomEvent(el.random)
         if (randomEvent) this.onRandomEvent.dispatch(randomEvent)
       }, this)

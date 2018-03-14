@@ -69,10 +69,10 @@ export default class extends Phaser.State {
       const yearCard = new CardYear({ game: this.game, text: this.game.levelData.briefing, attendance: this.game.attendance, icon: this.store.getLevelByKey(this.game.levelKey) })
       this.game.add.existing(yearCard)
       yearCard.showAsTiker()
-      yearCard.x += 0
-      yearCard.y += 25
+      yearCard.x += 800 * this.game.scaleMap
+      yearCard.y += this.game.camera.height * 0.05
       yearCard.offsetX = yearCard.width * 7
-      yearCard.offsetSpeed = this.game.camera.width / 1920 * 2.5
+      yearCard.offsetSpeed = this.game.camera.width / 1920 * 1.75
       yearCard.image.scale.setTo(1)
       cardGroup.addChild(yearCard)
 
@@ -81,10 +81,10 @@ export default class extends Phaser.State {
         const card = new Card({ game: this.game, text, icon, effency, cost })
         this.game.add.existing(card)
         card.showAsTiker()
-        card.x += (i + 1) * yearCard.width
-        card.y += 25
+        card.x += yearCard.x - (yearCard.width / 2) + (i * yearCard.width)
+        card.y += this.game.camera.height * 0.05
         card.offsetX = yearCard.width * 7
-        card.offsetSpeed = this.game.camera.width / 1920 * 2.5
+        card.offsetSpeed = this.game.camera.width / 1920 * 1.75
         card.image.scale.setTo(1.4)
         cardGroup.addChild(card)
       }

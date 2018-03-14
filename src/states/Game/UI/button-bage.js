@@ -28,5 +28,12 @@ export default class extends Phaser.Sprite {
     effencyText.x = this.width * 0.1
     effencyText.y += 3
     // costText.smoothed = false
+
+    this.setEnableState = () => {
+      this.frameName = 'badge-blue'
+    }
+    this.setDisableState = () => {
+      this.frameName = 'badge-gray'
+    }
   }
 }
