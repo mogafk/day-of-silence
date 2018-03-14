@@ -14,10 +14,10 @@ export default class {
     if (this.voterTurnout.value) this.voterTurnoutReached()
     if (typeof this.onVoterTurnoutChange === 'function') this.onVoterTurnoutChange(this._voterTurnout.value)
   }
-  constructor ({target, callback}) {
+  constructor ({target, callback, amount = 0}) {
     this.callback = callback
     this.voterTurnoutReached = () => this.callback()
-    this._amount = 0
+    this._amount = amount
     this._voterTurnout = {
       value: 0,
       target: target

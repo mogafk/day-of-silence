@@ -30,7 +30,8 @@ export default class extends Phaser.Sprite {
     costLabel.anchor.setTo(0, 0.5)
     costLabel.align = 'left'
 
-    const effencyLabel = this.addChild(game.make.text(50, 187, effency, textStyle(game)))
+    const effencyText = `${(effency * (this.game.attendance / 100) / this.game.levelData.target * 100).toFixed(1)}%`
+    const effencyLabel = this.addChild(game.make.text(50, 187, effencyText, textStyle(game)))
     effencyLabel.anchor.setTo(0, 0.5)
     effencyLabel.align = 'left'
 
@@ -76,9 +77,10 @@ export default class extends Phaser.Sprite {
     if (this.moveLeft) {
       const speed = this._offsetSpeed || 1
       this.x -= speed * this.game.scale.aspectRatio
-      if (this.x < 0 - this.width) {
+      if (this.x < this.width / -2) {
+        console.log('DELETE')
         const _offset = this._offsetX
-        this.x = _offset * this.game.scaleMap
+        this.x = _offset
       }
     }
   }

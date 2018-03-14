@@ -24,12 +24,12 @@ export default class extends Phaser.Group {
       this.onRandomEvent.dispatch(random)
       const infoLabel = {
         game,
-        text: random.message || 'РАНДОМНОЕ СОБЫТИЕ',
+        text: random.message || '',
         type: random.type
       }
       infoLabel.text += random.type === 'positive'
-        ? `\n+${random.effency}`
-        : `\n-${random.effency}`
+        ? `\n+${Math.round(random.effency / this.game.levelData.target * 100)}%`
+        : `\n-${Math.round(random.effency / this.game.levelData.target * 100)}%`
       this.showInfo(infoLabel)
     }, this)
 

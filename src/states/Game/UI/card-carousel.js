@@ -9,7 +9,7 @@ const textStyle = (game) => {
 }
 
 export default class extends Phaser.Sprite {
-  constructor ({game, icon, text = ''}) {
+  constructor ({game, icon, text = '', attendance}) {
     super(game, game.camera.width / 2, game.camera.height * -0.5, 'ui-inerface', 'card-empty')
     this.anchor.setTo(0.5)
     this.scale.setTo(game.scaleMap + 0.25)
@@ -24,9 +24,16 @@ export default class extends Phaser.Sprite {
     descriptionText.wordWrap = true
     descriptionText.wordWrapWidth = 300
 
+    const attendanceText = this.addChild(game.make.text(0, 180, `Ваша цель — ${attendance}%`, textStyle(game)))
+    attendanceText.anchor.setTo(0.5)
+    attendanceText.align = 'center'
+    attendanceText.wordWrap = true
+    attendanceText.wordWrapWidth = 300
+    attendanceText.fontSize = attendanceText.fontSize * 1.25
+    attendanceText.fontWeight = 700
+
     this.descriptionText = descriptionText
   }
-
 
   showAsTiker () {
     this.x = this.game.camera.width * 0.5
@@ -45,9 +52,10 @@ export default class extends Phaser.Sprite {
     if (this.moveLeft) {
       const speed = this._offsetSpeed || 1
       this.x -= speed * this.game.scale.aspectRatio
-      if (this.x < 0 - this.width) {
+      if (this.x < this.width / -2) {
+        console.log('DELETE')
         const _offset = this._offsetX
-        this.x = _offset * this.game.scaleMap
+        this.x = _offset //* this.game.scaleMap
       }
     }
   }

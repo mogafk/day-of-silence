@@ -20,7 +20,8 @@ export default class extends Phaser.Sprite {
     costText.y += 3
     // costText.smoothed = false
 
-    const effencyText = this.addChild(new Phaser.Text(game, 0, 0, `${Math.round(effency / this.game.levelData.target * 100)}%`, FONT_STYLE))
+    // const effencyText = this.addChild(new Phaser.Text(game, 0, 0, `${Math.round(effency / this.game.levelData.target * 100)}%`, FONT_STYLE))
+    const effencyText = this.addChild(new Phaser.Text(game, 0, 0, `${(effency * (this.game.attendance / 100) / this.game.levelData.target * 100).toFixed(1)}%`, FONT_STYLE))
     effencyText.fill = 'white'
     effencyText.anchor.setTo(0, 0.5)
     // effencyText.scale.setTo(0.6)

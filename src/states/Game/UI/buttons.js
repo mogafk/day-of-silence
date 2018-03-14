@@ -32,28 +32,31 @@ export default class extends Phaser.Group {
         card.showAsHint()
       }
 
-      const multipledChance = chance =>
-        chance.chance *
-        chance.type === 'positive'
-          ? multiplierPositive
-          : chance.type === 'negative'
-            ? multiplierNegative
-            : 1
+      const multipledChance = (chance, type) => {
+        if (type === 'positive') {
+          return chance * multiplierPositive
+        }
+        if (type === 'negative') {
+          return chance * multiplierNegative
+        }
+        return chance
+      }
 
       const getRandomChioces = random => {
-        return (random && random.length > 0)
-          ? random
-            .map(choice =>
-              Phaser.Utils.chanceRoll(multipledChance(choice))
-                ? choice
-                : false
-            )
-            .filter(el => el)
-          : false
+        if (random && random.length > 0) {
+          return random.map(choice =>
+            Phaser.Utils.chanceRoll(multipledChance(choice.chance, choice.type))
+              ? choice
+              : false
+          ).filter(el => el)
+        }
+        return false
       }
 
       const generateRandomEvent = random => {
+        console.log('randoms:', random)
         const randomChioces = getRandomChioces(random)
+        console.log('randomChioces:', randomChioces)
         return randomChioces
           ? this.game.rnd.pick(randomChioces)
           : false

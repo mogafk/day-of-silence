@@ -3,6 +3,7 @@ import Phaser from 'phaser'
 import Background from './background'
 import Foreground from './foreground'
 import House from './house'
+import Fist from './fist'
 
 export default class extends Phaser.Group {
   constructor (game) {
@@ -21,38 +22,38 @@ export default class extends Phaser.Group {
       '1996': {
         x: -1500,
         y: -840,
-        speedX: 2*2,
-        speedY: 1.085*2
+        speedX: 2 * 2,
+        speedY: 1.085 * 2
       },
       '2000': {
         x: -1500,
         y: -680,
-        speedX: 2*2,
-        speedY: 1.085*2
+        speedX: 2 * 2,
+        speedY: 1.085 * 2
       },
       '2004': {
         x: 2000,
         y: -1200,
-        speedX: -2*2,
-        speedY: 1.085*2
+        speedX: -2 * 2,
+        speedY: 1.085 * 2
       },
       '2008': {
         x: -1500,
         y: -700,
-        speedX: 2*2,
-        speedY: 1.085*2
+        speedX: 2 * 2,
+        speedY: 1.085 * 2
       },
       '2012': {
         x: 1500,
         y: -780,
-        speedX: -2*2,
-        speedY: 1.085*2
+        speedX: -2 * 2,
+        speedY: 1.085 * 2
       },
       '2018': {
         x: -1500,
         y: -700,
-        speedX: 2*2,
-        speedY: 1.085*2
+        speedX: 2 * 2,
+        speedY: 1.085 * 2
       }
     }
 
@@ -66,8 +67,16 @@ export default class extends Phaser.Group {
     game.houses.map(el => {
       const _house = new House(game, el.x, el.y, el.building)
       houses.add(_house)
-      _house.onInteract.add(() =>
+      _house.onInteract.add(() => {
+        const fist = new Fist(
+          this.game,
+          this.game.rnd.integerInRange(_house.x - (_house.width * 0.25), _house.x + (_house.width * 0.25)),
+          this.game.rnd.integerInRange(_house.y + (_house.height * 0.25), _house.y + (_house.height * 0.5)),
+          { x: this.game.scaleMap * 1.6 * 650, y: 50 * this.game.scaleMap }
+        )
+        this.addChild(fist)
         this.onInteract.dispatch()
+      }
       )
     })
 

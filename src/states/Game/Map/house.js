@@ -34,6 +34,12 @@ export default class extends Phaser.Sprite {
       .to({x: '-0.01', y: '-0.01'}, 100, Phaser.Easing.Back.In, false)
       .chain(tweenOut)
 
+    const tweenReviveOut = game.add.tween(this.scale)
+      .to({x: '-0.02', y: '-0.02'}, 75, Phaser.Easing.Back.In, false)
+    const tweenReviveIn = game.add.tween(this.scale)
+      .to({x: '+0.02', y: '+0.02'}, 75, Phaser.Easing.Back.Out, false)
+      .chain(tweenReviveOut)
+
     const updateInput = () => {
       this.inputEnabled = !this.locked
       if (!this.input) return
@@ -43,7 +49,7 @@ export default class extends Phaser.Sprite {
     }
     const updateView = () => {
       if (!this.locked) return false
-      this.overlay = new Overlay(game, key)
+      this.overlay = new Overlay(game, key, REVIVE_TIME)
       this.overlay.anchor = this.anchor
       this.addChild(this.overlay)
     }
@@ -67,6 +73,7 @@ export default class extends Phaser.Sprite {
     }
     const resetHouse = () => {
       unlock()
+      tweenReviveIn.start()
       resetRestCapacity()
       if (this.overlay) this.overlay.destroy()
     }

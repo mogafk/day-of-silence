@@ -34,7 +34,7 @@ export default class extends Phaser.State {
 
     this.game.multiply = levelData.multiply || {}
 
-    this.game.multiply.click = 1
+    this.game.multiply.click = 0
     this.game.multiply.duration = 1
     this.game.multiply.handicap = 0
     this.game.multiply.time = 1
@@ -45,7 +45,7 @@ export default class extends Phaser.State {
 
     if (this.game.multiplies) {
       this.game.multiplies.map(el => {
-        if (el.clicks) this.game.multiply.click *= el.clicks
+        if (el.clicks) this.game.multiply.click += el.clicks
         if (el.duration) this.game.multiply.duration -= el.duration
         if (el.handicap) this.game.multiply.handicap += el.handicap
         if (el.time) this.game.multiply.time += el.time
@@ -61,6 +61,7 @@ export default class extends Phaser.State {
     this.game.load.atlas('buildings', levelData.buildings.texture, levelData.buildings.atlas)
     this.game.load.image('bg', levelData.background)
     this.game.load.image('fg', levelData.foreground)
+    this.game.load.image('fist', './ui/fist.png')
     switch (this.game.levelKey) {
       case '1996':
         this.game.load.image('cortege-image', './misc/cortege_1.png')
@@ -124,8 +125,11 @@ export default class extends Phaser.State {
   createModel () {
     this.model = new Model({
       target: this.game.levelData.target,
-      callback: this.targetReached.dispatch()
+      callback: this.targetReached.dispatch(),
+      amount: this.game.multiply.click
     })
+
+    console.log('this.game.multiply.click', this.game.multiply.click)
 
     this.model.voterTurnout = Math.ceil(this.game.levelData.target * this.game.multiply.handicap)
 
@@ -137,7 +141,11 @@ export default class extends Phaser.State {
 
     this.model.onVoterTurnoutChange = (val) => {
       if (!val || typeof val !== 'number') return false
-      if (this.model.voterTurnout >= this.game.levelData.target && this.restGameTime.running) this.SessionWon()
+      if (this.model.voterTurnout >= this.game.levelData.target) {
+        if (this.restGameTime.running) {
+          this.SessionWon()
+        }
+      }
       this.ui.updateVoterTurnout(val)
     }
     this.ui.updateVoterTurnout(this.model.voterTurnout)
@@ -150,8 +158,7 @@ export default class extends Phaser.State {
     }, this)
 
     this.map.onInteract.add(() => {
-      console.log(this.game.multiply.click)
-      this.model.amount += 1 * this.game.multiply.click // ? this.game.multiply.click : 1 //  * this.game.multiply.click
+      this.model.amount += 1 //  * this.game.multiply.click // ? this.game.multiply.click : 1 //  * this.game.multiply.click
     }, this)
 
     this.ui.buttons.onActivateInstrument.add((cost, effency, duration) => {

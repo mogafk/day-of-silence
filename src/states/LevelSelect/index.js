@@ -34,6 +34,8 @@ export default class extends Phaser.State {
     if (!this.game.levelKey) this.game.levelKey = '1996' //  = store.getYearByKey(store.progress)
     this.game.levelData = levels[this.game.levelKey]
 
+    this.game.attendance = this.game.rnd.integerInRange(this.game.levelData.attendanceMin, this.game.levelData.attendanceMax)
+
     this.bgGroup = this.game.add.group()
 
     const _bgSprites = {
@@ -44,8 +46,6 @@ export default class extends Phaser.State {
       '2012': `ui-bg-${_buttons[4]}`,
       '2018': `ui-bg-${_buttons[5]}`
     }
-
-
 
     this._bgSprite = this.game.make.sprite(camW * 0.5, camH * 0.5, _bgSprites[this.game.levelKey])
     this._bgSprite.anchor.setTo(0.5)
@@ -66,25 +66,25 @@ export default class extends Phaser.State {
       //   effency,
       //   cost
       // })
-      const card = new CardYear({ game: this.game, text: 'вводный текст', icon: this.store.getLevelByKey(this.game.levelKey) })
-      this.game.add.existing(card)
-      card.showAsTiker()
-      card.x += 0
-      card.y += 25
-      card.offsetX = card.width * 8
-      card.offsetSpeed = 1
-      card.image.scale.setTo(1)
-      cardGroup.addChild(card)
+      const yearCard = new CardYear({ game: this.game, text: this.game.levelData.briefing, attendance: this.game.attendance, icon: this.store.getLevelByKey(this.game.levelKey) })
+      this.game.add.existing(yearCard)
+      yearCard.showAsTiker()
+      yearCard.x += 0
+      yearCard.y += 25
+      yearCard.offsetX = yearCard.width * 7
+      yearCard.offsetSpeed = this.game.camera.width / 1920 * 2.5
+      yearCard.image.scale.setTo(1)
+      cardGroup.addChild(yearCard)
 
       for (var i = 0; i < 5; i++) {
         const {name: text, image: icon, effency, cost} = levels[year].instruments[i]
         const card = new Card({ game: this.game, text, icon, effency, cost })
         this.game.add.existing(card)
         card.showAsTiker()
-        card.x += (i + 1) * card.width
+        card.x += (i + 1) * yearCard.width
         card.y += 25
-        card.offsetX = card.width * 8
-        card.offsetSpeed = 1
+        card.offsetX = yearCard.width * 7
+        card.offsetSpeed = this.game.camera.width / 1920 * 2.5
         card.image.scale.setTo(1.4)
         cardGroup.addChild(card)
       }
@@ -122,7 +122,6 @@ export default class extends Phaser.State {
     if (folders.length === 6) folders[5].x += folders[5].width * 0.7
 
     const startButton = this.game.add.button(camW * 0.5, camH * 0.1, 'ui-inerface', () => {
-      this.game.attendance = this.game.rnd.integerInRange(this.game.levelData.attendanceMin, this.game.levelData.attendanceMax)
       this.state.start('Game')
     }, this, 'button-play', 'button-play', 'button-play', 'button-play')
     startButton.scale.setTo(this.game.scaleMap * 1.25)

@@ -6,7 +6,9 @@ export default class extends Phaser.State {
     this.stage.backgroundColor = '#EDEEC9'
     this.fontsLoadedSignal = new Phaser.Signal()
     this.fontsLoadedSignal.add(() => {
-      this.state.start('Boot')
+      setTimeout(() => {
+        this.state.start('Boot')
+      }, 500)
     }, this)
   }
 
