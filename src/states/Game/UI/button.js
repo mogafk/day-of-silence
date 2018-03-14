@@ -7,7 +7,7 @@ export default class extends Phaser.Button {
   constructor ({game, x, y, icon, _idx, cost, effency, name = ''}) {
     super(game, x, y, 'ui-inerface')
 
-    this.frame = 3
+    this.frameName = 'shadow'
     this._idx = _idx
     this.cost = cost
     this.effency = effency
@@ -16,7 +16,7 @@ export default class extends Phaser.Button {
     this.inputEnabled = !this.locked
     this.activated = false
 
-    this.scale.setTo((game.camera.height / 6) / 120)
+    this.scale.setTo((game.camera.height / 6) / 142)
     this.anchor.setTo(0.5)
 
     this.showHint = new Phaser.Signal()

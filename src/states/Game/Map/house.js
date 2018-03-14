@@ -29,9 +29,9 @@ export default class extends Phaser.Sprite {
     this.onInteract = new Phaser.Signal()
     this.onEmpty = new Phaser.Signal()
 
-    const tweenOut = game.add.tween(this.scale).to({x: '+0.025', y: '+0.025'}, 100, Phaser.Easing.Back.Out, false)
+    const tweenOut = game.add.tween(this.scale).to({x: '+0.01', y: '+0.01'}, 100, Phaser.Easing.Back.Out, false)
     const tweenIn = game.add.tween(this.scale)
-      .to({x: '-0.025', y: '-0.025'}, 100, Phaser.Easing.Back.In, false)
+      .to({x: '-0.01', y: '-0.01'}, 100, Phaser.Easing.Back.In, false)
       .chain(tweenOut)
 
     const updateInput = () => {

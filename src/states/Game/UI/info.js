@@ -2,10 +2,11 @@ import Phaser from 'phaser'
 
 const textStyle = (game) => {
   return {
-    font: `bold ${game.camera.height * 0.06}px Roboto`,
+    font: `bold 25px Roboto`,
     align: 'center',
-    stroke: 'black',
-    strokeThickness: game.camera.height * 0.005
+    fill: '#fdfdfd',
+    // stroke: 'black'
+    strokeThickness: 3
   }
 }
 
@@ -15,16 +16,21 @@ const COLORS = {
   'neutral': 'white'
 }
 
-export default class extends Phaser.Text {
+export default class extends Phaser.Sprite {
   constructor ({game, text = '', type = 'neutral'}) {
-    super(game, game.camera.width / 2, -50, text, textStyle(game))
-
+    super(game, game.camera.width / 2, game.camera.height * -0.5, 'ui-inerface', 'card-random')
+    console.log('info', this.game)
     this.anchor.setTo(0.5)
-    this.scale.setTo(game.scaleMap)
-    this.align = 'center'
-    this.fill = COLORS[type]
-    this.wordWrap = true
-    this.wordWrapWidth = 600
+    this.scale.setTo(game.scaleMap * 1.5)
+
+    this.caption = new Phaser.Text(this.game, 0, 0, text, textStyle(this.game))
+    this.caption.anchor.setTo(0.5)
+    // this.scale.setTo(game.scaleMap)
+    this.caption.align = 'center'
+    this.caption.stroke = COLORS[type]
+    this.caption.wordWrap = true
+    this.caption.wordWrapWidth = 400
+    this.addChild(this.caption)
 
     const _tweenOut = game.make.tween(this)
       .to({ y: game.camera.height * 1.2 }, 500, Phaser.Easing.Back.In, false, 2500)

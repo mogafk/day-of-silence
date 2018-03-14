@@ -1,5 +1,5 @@
 import Phaser from 'phaser'
-const START_DELAY = 3
+const START_DELAY = 1
 
 const TEXT_STYLE = (game) => {
   return {

@@ -1,0 +1,28 @@
+{"frames": [
+
+{
+	"filename": "button-start-0.png",
+	"frame": {"x":0,"y":0,"w":471,"h":191},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":471,"h":191},
+	"sourceSize": {"w":471,"h":191}
+},
+{
+	"filename": "button-start-1.png",
+	"frame": {"x":0,"y":191,"w":471,"h":171},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":471,"h":171},
+	"sourceSize": {"w":471,"h":171}
+}],
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "splash-button.png",
+	"format": "RGBA8888",
+	"size": {"w":471,"h":362},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:0b62426764224a831f72437c7fe12fcb:e42b41bc10ce43070fb6c70c8662e24a:17d1ec3517be589b44e3c0845f0a8866$"
+}
+}

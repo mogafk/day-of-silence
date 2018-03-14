@@ -2,9 +2,9 @@ import Phaser from 'phaser'
 
 const textStyle = (game) => {
   return {
-    font: `${game.camera.height * 0.05}px Roboto`,
+    font: `${(game.camera.height * 0.02) / game.scaleMap}px Roboto`,
     align: 'center',
-    color: 'white'
+    fill: '#fdfdfd'
   }
 }
 
@@ -12,23 +12,25 @@ export default class extends Phaser.Sprite {
   constructor ({game, icon, effency, cost, text = '', target}) {
     super(game, game.camera.width / 2, game.camera.height * -0.5, 'ui-inerface', 'card')
     this.anchor.setTo(0.5)
-    this.scale.setTo(game.scaleMap)
+    this.scale.setTo(game.scaleMap + 0.25)
 
-    const image = this.addChild(game.make.sprite(0, -100, 'ui-icons', icon))
-    image.anchor.setTo(0.5)
-    image.scale.setTo(2)
+    this.image = this.addChild(game.make.sprite(0, -100, 'ui-icons', icon))
+    this.image.anchor.setTo(0.5)
+    this.image.scale.setTo(1.75)
 
-    const descriptionText = this.addChild(game.make.text(0, 100, text, textStyle(game)))
+    const descriptionText = this.addChild(game.make.text(0, 80, text, textStyle(game)))
     descriptionText.anchor.setTo(0.5)
     descriptionText.align = 'center'
     descriptionText.wordWrap = true
     descriptionText.wordWrapWidth = 300
 
-    const costLabel = this.addChild(game.make.text(-50, 175, cost))
+    this.descriptionText = descriptionText
+
+    const costLabel = this.addChild(game.make.text(-30, 187, cost, textStyle(game)))
     costLabel.anchor.setTo(0, 0.5)
     costLabel.align = 'left'
 
-    const effencyLabel = this.addChild(game.make.text(50, 175, effency))
+    const effencyLabel = this.addChild(game.make.text(50, 187, effency, textStyle(game)))
     effencyLabel.anchor.setTo(0, 0.5)
     effencyLabel.align = 'left'
 
@@ -39,11 +41,8 @@ export default class extends Phaser.Sprite {
       .to({ x: target.x, y: target.y }, 1000, Phaser.Easing.Back.In, false, 1000)
     const showOutScale = game.make.tween(this.scale)
       .to({x: 0.1, y: 0.1}, 750, Phaser.Easing.Back.In, false)
-    // const showOutAlpha = game.make.tween(this)
-    //   .to({alpha: 0.75}, 750, Phaser.Easing.Linear.None, false)
     showOut.onStart.add(() => {
       showOutScale.start()
-      // showOutAlpha.start()
     }, this)
     showOut.onComplete.add(() => {
       this.destroy()
@@ -53,6 +52,34 @@ export default class extends Phaser.Sprite {
       .to({ y: game.camera.height * 0.5 }, 1000, Phaser.Easing.Bounce.Out, false)
       .chain(showOut)
 
-    showIn.start()
+    this._hint = showIn
+  }
+
+  showAsHint () {
+    this._hint.start()
+  }
+
+  showAsTiker () {
+    this.x = this.game.camera.width * 0.5
+    this.y = this.game.camera.height * 0.5
+    this.scale.setTo(this.game.scaleMap * 1.5)
+    this.moveLeft = true
+  }
+
+  set offsetX (val) {
+    this._offsetX = val
+  }
+  set offsetSpeed (val) {
+    this._offsetSpeed = val
+  }
+  update () {
+    if (this.moveLeft) {
+      const speed = this._offsetSpeed || 1
+      this.x -= speed * this.game.scale.aspectRatio
+      if (this.x < 0 - this.width) {
+        const _offset = this._offsetX
+        this.x = _offset * this.game.scaleMap
+      }
+    }
   }
 }
