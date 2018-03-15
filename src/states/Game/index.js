@@ -23,7 +23,7 @@ export default class extends Phaser.State {
 
     this.restGameTime = this.game.time.create()
 
-    const timeValue = Phaser.Timer.SECOND * 20 * levelTimer * multiplicator
+    const timeValue = Phaser.Timer.SECOND * levelTimer * multiplicator
 
     this._15SecondsLeft = this.restGameTime.add(
       timeValue - (Phaser.Timer.SECOND * 16),
