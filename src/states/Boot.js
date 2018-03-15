@@ -8,7 +8,8 @@ export default class extends Phaser.State {
     // text.anchor.setTo(0.5, 0.5)
 
     this.load.crossOrigin = 'anonymous'
-    this.game.load.baseURL = './assets/'
+    // this.game.load.baseURL = './assets/'
+    this.game.load.baseURL = '/day_of_silence/assets/'
     this.game.load.image('ui-modal', 'ui/modal.png')
     this.game.load.atlas('ui-icons', 'ui/icons.png', 'ui/icons.json')
     this.game.load.atlasJSONHash('ui-multiplicators', 'ui/multiplicators.png', 'ui/multiplicators.json')
