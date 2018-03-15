@@ -5,10 +5,16 @@ import style from 'style-loader!css-loader!./style.css'
 
 const template = Handlebars.compile(rawTemplate)
 
-export default ({cb}) => {
-  var res = {'currentURL': encodeURIComponent(window.location.href + `?_share=1`)}
 
-  res['background'] = './assets/starters/win.png'
+let BG_PATH = './assets/starters/'
+if (__DEV__ == false) {
+  BG_PATH = '/day_of_silence/assets/starters/'
+}
+
+export default ({ cb }) => {
+  var res = { 'currentURL': encodeURIComponent(window.location.href + `?_share=1`) }
+
+  res['background'] = `${BG_PATH}/win.png`
   res['title'] = 'Почетная грамота'
   res['text'] = 'За достижение целевых показателей в игре «День тишины», большой личный вклад в волеизъявление граждан и неизменно творческий подход к избирательному праву'
   res['signature'] = 'Центральная избирательная комиссия «Медиазоны»'
@@ -25,3 +31,5 @@ export default ({cb}) => {
     cb()
   }
 }
+// show(() => console.log('do nothing'))
+// export default show;

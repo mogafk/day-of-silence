@@ -20,7 +20,10 @@ class Game extends Phaser.Game {
       : _w = _h * (16 / 9)
 
     // console.log('_w', _w);
-    if (_w > 1200) _w = 1200;
+    if (_w > 1200) {
+      _w = 1200;
+      _h = _w * (9 / 16)
+    }
     super(_w, _h, Phaser.WebGL, document.querySelector('.js-game-container'), null)
 
     this.pixelRatio = window.devicePixelRatio
