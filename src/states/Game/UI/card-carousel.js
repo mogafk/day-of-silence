@@ -53,7 +53,6 @@ export default class extends Phaser.Sprite {
       const speed = this._offsetSpeed || 1
       this.x -= speed * this.game.scale.aspectRatio
       if (this.x < this.width / -2) {
-        console.log('DELETE')
         const _offset = this._offsetX
         this.x = _offset //* this.game.scaleMap
       }

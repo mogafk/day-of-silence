@@ -1,0 +1,224 @@
+/* .modal--container{
+    position: relative;
+}
+.modal{
+    position: absolute;
+    bottom: 0;
+} */
+
+
+@-webkit-keyframes backgroundmodal {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes backgroundmodal {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .game-end-container {
+      position: fixed;
+      top: 0px; left: 0px;
+      height: 100%;
+      width: 100%;
+      overflow-y: scroll;
+      font-size: 14px;
+      display: flex;
+      z-index: 4;
+      background: rgba(0,0,0,0.7);
+      -webkit-animation: backgroundmodal 0.7s ease forwards;
+      animation: backgroundmodal 0.7s ease forwards;
+    }
+    
+    .game-end {
+      margin: auto auto;
+      width: 500px;
+      background: white;
+      padding-bottom: 15px;
+      text-align: center;
+    }
+      .game-end-separator {
+        margin-left: 40px;
+        margin-right: 40px;
+        padding-left: 40px;
+        padding-right: 40px;
+      }
+      .game-end_picture {
+        min-height: 300px;
+        width: 100%;
+        background: #ccc;
+        background-size: cover;
+      }
+      .game-end_content {
+        padding: 30px 40px 30px 40px;
+      }
+      .game-end_header {
+        font-size: 20px;
+        margin: 0px;
+        font-family: 'Graphik LC';
+      }
+      .game-end_sub-header {
+        font-size: 18px;
+        margin-top: 20px;
+        font-family: 'Graphik LC';
+      }
+      .game-end_text {
+        /* margin: 0px 50px; */
+        font-size: 16px;
+        line-height: 26px;
+        font-family: 'Graphik LC';
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+      .game-end_signature {
+        /* margin: 0px 50px; */
+        font-size: 14px;
+        line-height: 26px;
+        font-family: 'Graphik LC';
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+      .game-end_replay {
+        margin-top: 0px;
+      }
+      .game-end_score {
+        margin-top: 40px;
+      }
+      .game-end_participated {
+        margin: 40px 0px;
+      }
+      .game-end_shares {
+        margin-top: 17px;
+        margin-bottom: 17px;
+      }
+    
+    .score-line {
+      margin-top: 20px;
+      font-size: 16px;
+      font-family: 'Graphik LC';
+    }
+      .score-line_name {
+        font-weight: 900;
+      }
+    .game-shares{}
+      .game-shares_header {
+        font-family: 'Graphik LC';
+        font-size: 16px;
+      }
+      .game-shares_shares-container {
+        margin-top: 12px;
+        margin-left: -10px;
+      }
+      .game-shares_icon {
+        display: inline-block;
+        height: 30px;
+        width: 30px;
+        border-radius: 100%;
+        border: 1px solid #f1f1f1;
+    
+        line-height: 30px;
+        vertical-align: middle;
+    
+        margin-left: 10px;
+    
+        cursor: pointer;
+        background: transparent;
+        transition: background 0.2s linear;
+      }
+      .game-shares_icon svg {
+        position: relative;
+      }
+      .game-shares_icon svg path {
+        transition: fill 0.2s linear;
+      }
+      .game-shares_icon--tw:hover {
+        background: #01acee;
+      }
+      .game-shares_icon--fb:hover {
+        background: #3c5998;
+      }
+      .game-shares_icon--vk:hover {
+        background: #48719e;
+      }
+      .game-shares_icon--ok:hover {
+        background: #ff9e4c;
+      }
+      .game-shares_icon--tlg:hover {
+        background: #63a9dc;
+      }
+    
+      .game-shares_icon--tw:hover svg path {
+        fill: white;
+      }
+      .game-shares_icon--fb:hover svg path {
+        fill: white;
+      }
+      .game-shares_icon--vk:hover svg path {
+        fill: white;
+      }
+      .game-shares_icon--ok:hover svg path {
+        fill: white;
+      }
+      .game-shares_icon--tlg:hover svg path {
+        fill: white;
+      }
+      .game-shares_icon--tw svg{
+        margin-left: 1px;
+      }
+      .game-shares_icon--fb svg {
+        margin-left: -2px;
+      }
+      .game-shares_icon--vk svg {
+        margin-top: 2px;
+      }
+      .game-shares_icon--ok svg {
+        margin-left: 1px;
+      }
+      .game-shares_icon--tlg svg {
+        margin-left: -2px;
+        margin-top: -1px
+      }
+    
+    .game-button {
+      border: 0;
+      background: #ec4d69;
+      color: white;
+      font-weight: 900;
+      padding: 15px 35px;
+      min-width: 186px;
+    
+      cursor: pointer;
+      font-family: 'Graphik LC';
+      font-weight: 900;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      transition: background 0.5s linear;
+    }
+    .game-button:focus {
+      outline: 0;
+    }
+    
+    .replay-button {
+      background: #ec4d69;
+    }
+    .replay-button:hover {
+      background: red;
+    }
+    .participated-form {
+      letter-spacing: 10px;
+    }
+    .participated-button {
+      background: #73eb87;
+    }
+    .participated-button:hover {
+      background: green;
+    }

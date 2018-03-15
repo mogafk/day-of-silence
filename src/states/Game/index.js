@@ -7,6 +7,10 @@ import Countdown from './countdown'
 import Modal from './UI/modal'
 import Multiplicators from './UI/multiplicators'
 import Gameover from './UI/card-gameover'
+import Menu from './UI/menu'
+import MenuIcon from './UI/menu-icon'
+import { GAStartLevel, GALooseLevel } from '.././Analit'
+
 import Store from '.././Store'
 
 export default class extends Phaser.State {
@@ -17,8 +21,23 @@ export default class extends Phaser.State {
     const multiplicator = this.game.multiply.time || 1
 
     this.restGameTime = this.game.time.create()
+
+    const timeValue = Phaser.Timer.SECOND * levelTimer * multiplicator
+
+    this._15SecondsLeft = this.restGameTime.add(
+      timeValue - (Phaser.Timer.SECOND * 16),
+      () => {
+        this.updateMusic(15)
+      }
+    )
+    this._5SecondsLeft = this.restGameTime.add(
+      timeValue - (Phaser.Timer.SECOND * 6),
+      () => {
+        this.updateMusic(5)
+      }
+    )
     this.timerEvent = this.restGameTime.add(
-      Phaser.Timer.SECOND * levelTimer * multiplicator,
+      timeValue,
       () => {
         this.SessionEnd()
         this.onSessionEnd.dispatch()
@@ -28,20 +47,15 @@ export default class extends Phaser.State {
   }
 
   preload () {
-    const { levelData, multiplies } = this.game
-
-    console.log('multiplies:', multiplies)
+    const { levelData } = this.game
 
     this.game.multiply = levelData.multiply || {}
-
     this.game.multiply.click = 0
     this.game.multiply.duration = 1
     this.game.multiply.handicap = 0
     this.game.multiply.time = 1
     this.game.multiply.fortuneNegative = 1
     this.game.multiply.fortunePositive = 1
-
-    console.log('this.game.multiply', this.game.multiply)
 
     if (this.game.multiplies) {
       this.game.multiplies.map(el => {
@@ -54,8 +68,6 @@ export default class extends Phaser.State {
       })
     }
 
-    console.log('this.game.multiply', this.game.multiply)
-
     this.createTimer()
 
     this.game.load.atlas('buildings', levelData.buildings.texture, levelData.buildings.atlas)
@@ -64,6 +76,7 @@ export default class extends Phaser.State {
     this.game.load.image('fist', './ui/fist.png')
     switch (this.game.levelKey) {
       case '1996':
+        this.game.load.image('ui-informer', './ui/informer.png')
         this.game.load.image('cortege-image', './misc/cortege_1.png')
         break
       case '2000':
@@ -71,6 +84,7 @@ export default class extends Phaser.State {
         break
       case '2004':
         this.game.load.image('cortege-image', './misc/cortege_2.png')
+        this.game.load.atlas('smoke', 'misc/smoke.png', 'misc/smoke.json')
         break
       case '2008':
         this.game.load.image('cortege-image', './misc/cortege_4.png')
@@ -94,19 +108,6 @@ export default class extends Phaser.State {
     }, this)
 
     this.game.houses = levelData.buildings.locations
-
-    console.log(this.game.attendance)
-
-    this.keyRestart = this.game.input.keyboard.addKey(Phaser.Keyboard.R)
-    this.keyRestart.onDown.add(() => {
-      // this.restart()
-      this.map.destroy()
-      this.map = undefined
-      this.ui.destroy()
-      this.ui = undefined
-      this.state.start('Game')
-    }, this)
-
     this.store = new Store()
 
     if (__DEV__) {
@@ -128,8 +129,6 @@ export default class extends Phaser.State {
       callback: this.targetReached.dispatch(),
       amount: this.game.multiply.click
     })
-
-    console.log('this.game.multiply.click', this.game.multiply.click)
 
     this.model.voterTurnout = Math.ceil(this.game.levelData.target * this.game.multiply.handicap)
 
@@ -162,9 +161,6 @@ export default class extends Phaser.State {
     }, this)
 
     this.ui.buttons.onActivateInstrument.add((cost, effency, duration) => {
-      // console.log('cost', cost)
-      // console.log('effency', effency)
-      // console.log('duration', duration)
       if (this.model.amount < cost) return false
       const multipliedDuration = duration * this.game.multiply.duration
       this.model.amount -= cost
@@ -177,11 +173,30 @@ export default class extends Phaser.State {
     }, this)
   }
 
+  playSound (sound) {
+    const sfx = this.game.add.sound(`sfx-${sound}`)
+    sfx.play('', 0, 1, false)
+    return sfx
+  }
+
   create () {
+    GAStartLevel(this.game.levelKey)
+    this.game.sound.stopAll()
+    this.music = this.game.add.sound('sfx-main-loop')
+    this.music.play('', 0, 1, true)
+
     this.map = this.add.existing(new Map(this.game))
     const modal = this.game.add.existing(new Modal(this.game))
+    modal.alpha = 0.1
     this.countdown = new Countdown(this.game)
+    if (this.game.levelKey === '1996') {
+      this.informer = this.game.add.sprite(this.game.camera.width * 0.5, this.game.camera.height * 0.5, 'ui-informer')
+      this.informer.anchor.setTo(0.5)
+      this.informer.scale.setTo(this.game.scaleMap * 1.5)
+    }
+
     this.countdown.onFinish.add(() => {
+      if (this.informer) this.informer.destroy()
       modal.destroy()
       this.ui = this.add.existing(new UI(this.game))
       this.createModel()
@@ -190,22 +205,28 @@ export default class extends Phaser.State {
     }, this)
     this.countdown.startTimer()
 
-    this.keyLoose = this.game.input.keyboard.addKey(Phaser.Keyboard.K)
-    this.keyLoose.onDown.add(() => {
-      this.SessionEnd()
+    this.menuLayer = this.game.add.group()
+    this.menuIcon = this.menuLayer.add(new MenuIcon(this.game, this.game.camera.width * 0.95, this.game.camera.height * 0.05))
+    this.menuWindow = this.menuLayer.add(new Menu(this.game))
+    this.menuIcon.onOpen.add(() => {
+      this.menuModal = this.menuLayer.add(new Modal(this.game))
+      this.menuLayer.bringToTop(this.menuIcon)
+      this.menuLayer.bringToTop(this.menuWindow)
+      this.menuWindow.show()
+      this.ui.labels.visible = false
+      this.ui.buttons.visible = false
     }, this)
-
-    this.keyWin = this.game.input.keyboard.addKey(Phaser.Keyboard.L)
-    this.keyWin.onDown.add(() => {
-      this.SessionWon()
+    this.menuIcon.onClose.add(() => {
+      if (this.menuModal) this.menuModal.destroy()
+      this.menuWindow.hide()
+      this.ui.labels.visible = true
+      this.ui.buttons.visible = true
     }, this)
-
-    // if (__DEV__) {
-    //   if (!this.admin) this.admin = new Admin(this.game)
-    // }
   }
 
   SessionEnd () {
+    GALooseLevel(this.game.levelKey)
+    this.updateMusic(0)
     this.restGameTime.stop()
     this.ui.updateTimer(0)
     this.game.add.existing(new Modal(this.game))
@@ -236,12 +257,41 @@ export default class extends Phaser.State {
   }
 
   SessionWon () {
+    this.music.fadeOut(500)
+    this.playSound('win')
     this.restGameTime.stop()
     this.ui.updateTimer(0)
     this.map.cortegeStart()
     this.map.cortegeFinish.add(() => this.selectMultiplicators(), this)
     this.modalOverlay = this.game.add.existing(new Modal(this.game))
     this.modalOverlay.alpha = 0.1
+  }
+
+  updateMusic (val) {
+    const _muse = name => {
+      this.music.fadeOut(500)
+      this.music.onFadeComplete.add(() => {
+        this.music = this.game.add.sound(name)
+        this.music.play('', 0, 1, true)
+      }, this)
+    }
+    if (val === 15) {
+      _muse('sfx-main-15sec')
+      return true
+    }
+    if (val === 5) {
+      _muse('sfx-main-5sec')
+      return true
+    }
+    if (val === 0) {
+      _muse('sfx-gameover')
+      return true
+    }
+    if (val === 10) {
+      _muse('sfx-intro')
+      return true
+    }
+    return false
   }
 
   update () {

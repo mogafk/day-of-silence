@@ -35,6 +35,13 @@ export default class extends Phaser.Sprite {
     effencyLabel.anchor.setTo(0, 0.5)
     effencyLabel.align = 'left'
 
+    this.playSFX = (name) => {
+      const sfx = this.game.add.sound(`sfx-${name}`)
+      sfx.allowMultiple = true
+      sfx.play('', 0, 1, false)
+      return sfx
+    }
+
     if (!target) {
       target = {x: this.x, y: game.camera.height * 1.25, scale: 0.5}
     }
@@ -43,6 +50,7 @@ export default class extends Phaser.Sprite {
     const showOutScale = game.make.tween(this.scale)
       .to({x: 0.1, y: 0.1}, 750, Phaser.Easing.Back.In, false)
     showOut.onStart.add(() => {
+      this.playSFX('card-away')
       showOutScale.start()
     }, this)
     showOut.onComplete.add(() => {
@@ -57,6 +65,7 @@ export default class extends Phaser.Sprite {
   }
 
   showAsHint () {
+    this.playSFX('card')
     this._hint.start()
   }
 
@@ -78,7 +87,6 @@ export default class extends Phaser.Sprite {
       const speed = this._offsetSpeed || 1
       this.x -= speed * this.game.scale.aspectRatio
       if (this.x < this.width / -2) {
-        console.log('DELETE')
         const _offset = this._offsetX
         this.x = _offset
       }

@@ -1,4 +1,4 @@
-import Phaser from 'phaser'
+// import Phaser from 'phaser'
 import Label from './label'
 
 export default class extends Label {
@@ -50,7 +50,6 @@ export default class extends Label {
     //   if (this.additional) this.text += this.additional
     //   // if (this.fillable) this.fillable.text = this.text
     // }
-    console.log('Y:', this.height)
 
     this.fill = 'red'
 

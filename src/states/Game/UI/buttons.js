@@ -2,13 +2,11 @@ import Phaser from 'phaser'
 import InstrumentButton from './button'
 import Card from './card'
 import Badge from './button-bage'
-import Flier from './flier'
+// import Flier from './flier'
 
 export default class extends Phaser.Group {
   constructor (game) {
     super(game)
-
-    console.log(game)
     const multiplierNegative = game.multiply.fortuneNegative
     const multiplierPositive = game.multiply.fortunePositive
 
@@ -31,7 +29,7 @@ export default class extends Phaser.Group {
         const { icon, cost, effency, name: text } = props
         const target = { x: button.x, y: button.y }
         const card = new Card({ game, text, icon, effency, cost, target })
-        this.game.add.existing(card)
+        this.addChild(card)
         card.showAsHint()
       }
 
@@ -57,9 +55,7 @@ export default class extends Phaser.Group {
       }
 
       const generateRandomEvent = random => {
-        console.log('randoms:', random)
         const randomChioces = getRandomChioces(random)
-        console.log('randomChioces:', randomChioces)
         return randomChioces
           ? this.game.rnd.pick(randomChioces)
           : false
@@ -68,13 +64,13 @@ export default class extends Phaser.Group {
       button.showHint.add(props => { showCard(props) }, this)
       button.onPressed.add(() => {
         this.onActivateInstrument.dispatch(el.cost, el.effency, el.duration)
-        for (let i = 0; i < 5; i++) {
-          setTimeout(() => {
-            const target = { x: this.game.scaleMap * 1.6 * 300, y: 50 * this.game.scaleMap }
-            const flier = new Flier(game, button.x, button.y, target)
-            this.addChild(flier)
-          }, 50 * i)
-        }
+        // for (let i = 0; i < 5; i++) {
+        //   setTimeout(() => {
+        //     const target = { x: this.game.scaleMap * 1.6 * 300, y: 50 * this.game.scaleMap }
+        //     const flier = new Flier(game, button.x, button.y, target)
+        //     this.addChild(flier)
+        //   }, 50 * i)
+        // }
 
         const randomEvent = generateRandomEvent(el.random)
         if (randomEvent) this.onRandomEvent.dispatch(randomEvent)
@@ -83,7 +79,7 @@ export default class extends Phaser.Group {
     })
 
     this.updateAvailable = val => {
-      this.forEach(button => button.checkAvailable(val))
+      this.forEach(button => { if ('checkAvailable' in button) return button.checkAvailable(val) })
     }
   }
 }

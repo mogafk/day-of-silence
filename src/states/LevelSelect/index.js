@@ -1,16 +1,14 @@
-/* globals __DEV__ */
 import Phaser from 'phaser'
 import levels from '.././levels.json'
 import Card from '.././Game/UI/card'
 import CardYear from '.././Game/UI/card-carousel'
-import Info from '.././Game/UI/info'
+// import Info from '.././Game/UI/info'
 import Store from '.././Store'
 
 export default class extends Phaser.State {
   init () {}
 
   preload () {
-    console.log('this.gameProgress', this.gameProgress)
     this.game.load.image('ui-bg-1996', 'starters/1996.png')
     this.game.load.image('ui-bg-2000', 'starters/2000.png')
     this.game.load.image('ui-bg-2004', 'starters/2004.png')
@@ -18,12 +16,15 @@ export default class extends Phaser.State {
     this.game.load.image('ui-bg-2012', 'starters/2012.png')
     this.game.load.image('ui-bg-2018', 'starters/2018.png')
 
-    this.game.load.image('ui-level-select-button', 'ui/level-select-button.png')
     this.game.load.atlasJSONHash('ui-folders', 'ui/folders.png', 'ui/folders.json')
     this.game.load.atlasJSONHash('ui-numbers', 'ui/numbers.png', 'ui/numbers.json')
   }
 
   create () {
+    this.game.sound.stopAll()
+    this.music = this.game.add.sound('sfx-intro')
+    this.music.play('', 0, 1, true)
+
     const _buttons = Object.keys(levels)
     const {width: camW, height: camH} = this.game.camera
     const {width: bgW, height: bgH} = this.game.cache.getImage('ui-bg-1996')
@@ -118,11 +119,11 @@ export default class extends Phaser.State {
       // }, this)
       return folder
     }).filter(el => el)
-    console.log(folders)
     if (folders.length === 6) folders[5].x += folders[5].width * 0.7
 
     const startButton = this.game.add.button(camW * 0.5, camH * 0.1, 'ui-inerface', () => {
-      this.state.start('Game')
+      this.music.fadeOut(600)
+      this.music.onFadeComplete.add(() => { this.state.start('Game') }, this)
     }, this, 'button-play', 'button-play', 'button-play', 'button-play')
     startButton.scale.setTo(this.game.scaleMap * 1.25)
     startButton.anchor.setTo(0.5)
@@ -132,7 +133,6 @@ export default class extends Phaser.State {
     //   text: 'cdnsjlcnjksdn vknaskjcns csn fdhjvbn  jlas dnbckjn ad khsbckjb sdfhncksbd kjcb ksvbfdsbhksbdfhbvhjsnd chkbskdbvhksnlc jhbskb vkjsdbfj  hvbhsk dbnck lbsfjdnv bhkds fnbhj lvbsdf klhjbvkjsdbhkd',
     //   type: 'positive'
     // })
-    // console.log('infoLabel:', infoLabel)
     // this.game.add.existing(infoLabel)
     // infoLabel.x = this.game.camera.width / 2
     // infoLabel.y = 0
@@ -152,7 +152,6 @@ export default class extends Phaser.State {
     //     this.game.levelData = levels[el]
     //     this.game.levelKey = el
     //     this.game.attendance = this.game.rnd.integerInRange(this.game.levelData.attendanceMin, this.game.levelData.attendanceMax)
-    //     console.log('gamedata:', this.game.levelData)
     //     if (__DEV__ && this.game.input.keyboard.isDown(Phaser.Keyboard.SHIFT)) {
     //       this.state.start('MapEditor')
     //     } else {

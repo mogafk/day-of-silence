@@ -86,7 +86,6 @@ export default class extends Phaser.Group {
   cortegeStart () {
     this.isCortegeMove = true
     setTimeout(() => {
-      console.log('TIMEOUT')
       this.cortegeFinish.dispatch()
     }, 6000)
   }

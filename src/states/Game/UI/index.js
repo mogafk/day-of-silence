@@ -4,6 +4,7 @@ import Buttons from './buttons'
 import Information from './info'
 import Menu from './menu'
 import MenuIcon from './menu-icon'
+import Modal from './modal'
 
 const Y_OFFSET = 0.06
 
@@ -13,6 +14,10 @@ export default class extends Phaser.Group {
 
     this.buttons = new Buttons(game)
     this.labels = this.add(new Labels(game))
+    this.buttons.onActivateInstrument.add(() => {
+      this.labels.interactVoterTurnout()
+    }, this)
+
     this.labels.y += game.camera.height * Y_OFFSET
     this.updateAmount = val => {
       this.labels.updateAmountView(val)
@@ -36,11 +41,6 @@ export default class extends Phaser.Group {
     }, this)
 
     this.onRandomEvent = new Phaser.Signal()
-
-    this.menuIcon = this.add(new MenuIcon(this.game, this.game.camera.width * 0.95, this.game.camera.height * Y_OFFSET))
-    this.menuWindow = this.add(new Menu(this.game))
-    this.menuIcon.onOpen.add(() => this.menuWindow.show(), this)
-    this.menuIcon.onClose.add(() => this.menuWindow.hide(), this)
   }
 
   showCard () {}

@@ -3,7 +3,6 @@ import { centerGameObjects } from '../utils'
 
 export default class extends Phaser.State {
   init () {
-    console.log('GAME STATE')
     // this.createNewButton = this.createNewButton.bind(this)
     // this.runGame = this.runGame.bind(this)
   }

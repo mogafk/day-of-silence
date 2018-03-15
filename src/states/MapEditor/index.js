@@ -26,12 +26,10 @@ export default class extends Phaser.State {
         y: el.relativeY(),
         building: el.frameName
       }
-      // console.log(location)
       locations.push(location)
     })
     this.game.levelData.buildings.locations = locations
     _levels[this.game.levelKey] = this.game.levelData
-    console.log(JSON.stringify(_levels))
   }
 
   create () {

@@ -5,9 +5,9 @@ const TEXT_STYLE = (game) => {
   return {
     font: `bold ${game.camera.height * 0.1}px Roboto`,
     fill: 'white',
-    align: 'center',
-    stroke: '#000000',
-    strokeThickness: game.camera.height * 0.01
+    align: 'center'
+    // stroke: '#000000',
+    // strokeThickness: game.camera.height * 0.01
   }
 }
 

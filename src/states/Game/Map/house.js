@@ -41,11 +41,18 @@ export default class extends Phaser.Sprite {
       .chain(tweenReviveOut)
 
     const updateInput = () => {
-      this.inputEnabled = !this.locked
+      if (!this.alive) return
+      try {
+        this.inputEnabled = !this.locked
+      } catch (err) {
+        console.error('Ошибка при переинциализации домов')
+        console.error(err)
+      }
       if (!this.input) return
       this.input.pixelPerfectOver =
         this.input.pixelPerfectClick =
           this.input.useHandCursor = true
+      this.input.priorityID = 0
     }
     const updateView = () => {
       if (!this.locked) return false
@@ -72,10 +79,23 @@ export default class extends Phaser.Sprite {
       this.rest = this.rest - 1
     }
     const resetHouse = () => {
-      unlock()
-      tweenReviveIn.start()
-      resetRestCapacity()
-      if (this.overlay) this.overlay.destroy()
+      try {
+        unlock()
+        tweenReviveIn.start()
+        resetRestCapacity()
+        if (this.overlay) this.overlay.destroy()
+      } catch (err) {
+        console.error(err)
+      }
+    }
+
+    const sounds = ['tap-1', 'tap-2']
+    const playSFX = () => {
+      const name = this.game.rnd.pick(sounds)
+      const sfx = this.game.add.sound(`sfx-${name}`)
+      sfx.allowMultiple = true
+      sfx.play('', 0, 1, false)
+      return sfx
     }
 
     resetHouse()
@@ -85,6 +105,7 @@ export default class extends Phaser.Sprite {
       tweenIn.start()
       decrementRestCapacity()
       this.onInteract.dispatch()
+      playSFX()
     }
     this.events.onInputDown.add(() => touched(), this)
 

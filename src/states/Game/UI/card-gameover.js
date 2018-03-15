@@ -1,8 +1,9 @@
 import Phaser from 'phaser'
+import { GARestartLevel } from '../.././Analit'
 
 const textStyle = (game) => {
   return {
-    font: `${(game.camera.height * 0.02) / game.scaleMap}px Roboto`,
+    font: `16px Roboto`,
     align: 'center',
     fill: '#fdfdfd'
   }
@@ -20,7 +21,7 @@ export default class extends Phaser.Sprite {
 
     const text = 'Вы не справились с важным заданием\nК счастью, вы можете переиграть этот уровень'
 
-    const descriptionText = this.addChild(game.make.text(0, 80, text, textStyle(game)))
+    const descriptionText = this.addChild(game.make.text(0, 50, text, textStyle(game)))
     descriptionText.anchor.setTo(0.5)
     descriptionText.align = 'center'
     descriptionText.wordWrap = true
@@ -28,10 +29,14 @@ export default class extends Phaser.Sprite {
 
     this.descriptionText = descriptionText
 
-    const button = this.addChild(this.game.make.button(0, 190, 'ui-inerface',
-      () => { this.game.state.start('Game') },
+    const button = this.addChild(this.game.make.button(0, 150, 'ui-inerface',
+      () => {
+        GARestartLevel(this.game.levelKey)
+        this.game.state.start('Game')
+      },
       this, 'button-again', 'button-again', 'button-again', 'button-again')
     )
+    button.input.priorityID = 98
 
     button.anchor.setTo(0.5)
 

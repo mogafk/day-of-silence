@@ -51,7 +51,6 @@ export default class {
     this.keySave.onDown.add(() => {
       const _obj = {}
       _obj[levelKey] = levelData
-      console.log(JSON.stringify(_obj))
     }, this)
   }
 }

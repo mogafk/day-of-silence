@@ -62,6 +62,14 @@ export default class extends Phaser.Button {
       updateView()
     }
 
+    const playSFX = () => {
+      const name = 'tool'
+      const sfx = this.game.add.sound(`sfx-${name}`)
+      sfx.allowMultiple = true
+      sfx.play('', 0, 1.5, false)
+      return sfx
+    }
+
     const recoveringTween = this.game.add.tween(this.scale)
       .to({x: '+0.1', y: '+0.1'}, PRESS_ANIM_DURATION, PRESS_ANIM_EASING.In, false, this.recoveryTime - PRESS_ANIM_DURATION)
     recoveringTween.onComplete.add(() => {
@@ -86,6 +94,7 @@ export default class extends Phaser.Button {
 
     this.onInputUp.add(() => {
       if (!this.locked && !this.recovering) {
+        playSFX()
         this.startRecovering()
         this.pressedAnimation.start()
         this.onPressed.dispatch()

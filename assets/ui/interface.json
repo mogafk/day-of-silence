@@ -18,7 +18,7 @@
 },
 "button-again":
 {
-	"frame": {"x":366,"y":0,"w":266,"h":98},
+	"frame": {"x":202,"y":0,"w":266,"h":98},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":266,"h":98},
@@ -26,7 +26,7 @@
 },
 "button-play":
 {
-	"frame": {"x":632,"y":0,"w":266,"h":98},
+	"frame": {"x":468,"y":0,"w":266,"h":98},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":266,"h":98},
@@ -34,7 +34,7 @@
 },
 "card-empty":
 {
-	"frame": {"x":0,"y":164,"w":414,"h":534},
+	"frame": {"x":1068,"y":414,"w":414,"h":534},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":414,"h":534},
@@ -42,7 +42,7 @@
 },
 "card-gamover":
 {
-	"frame": {"x":414,"y":164,"w":414,"h":534},
+	"frame": {"x":0,"y":948,"w":414,"h":534},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":414,"h":534},
@@ -50,7 +50,7 @@
 },
 "card-multi":
 {
-	"frame": {"x":0,"y":1238,"w":1014,"h":634},
+	"frame": {"x":834,"y":948,"w":1014,"h":634},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":1014,"h":634},
@@ -58,7 +58,7 @@
 },
 "card-random":
 {
-	"frame": {"x":420,"y":698,"w":534,"h":414},
+	"frame": {"x":534,"y":414,"w":534,"h":414},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":534,"h":414},
@@ -66,15 +66,31 @@
 },
 "card":
 {
-	"frame": {"x":0,"y":698,"w":420,"h":540},
+	"frame": {"x":414,"y":948,"w":420,"h":540},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":420,"h":540},
 	"sourceSize": {"w":420,"h":540}
 },
+"random-bad":
+{
+	"frame": {"x":0,"y":414,"w":534,"h":414},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":534,"h":414},
+	"sourceSize": {"w":534,"h":414}
+},
+"random-good":
+{
+	"frame": {"x":898,"y":0,"w":534,"h":414},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":534,"h":414},
+	"sourceSize": {"w":534,"h":414}
+},
 "shadow":
 {
-	"frame": {"x":202,"y":0,"w":164,"h":164},
+	"frame": {"x":734,"y":0,"w":164,"h":164},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":164,"h":164},
@@ -85,8 +101,8 @@
 	"version": "1.0",
 	"image": "interface.png",
 	"format": "RGBA8888",
-	"size": {"w":1014,"h":1872},
+	"size": {"w":1848,"h":1582},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:461c49ff875411af0665c4a015a30994:004887b33f58fd8ad826bfbe5ee45408:8141c0d8370228a8661c55b8bcf20981$"
+	"smartupdate": "$TexturePacker:SmartUpdate:6d4bc3aa68d47b59c7538593c9854480:29a869930c25f1a523584c67a2b1ef71:8141c0d8370228a8661c55b8bcf20981$"
 }
 }

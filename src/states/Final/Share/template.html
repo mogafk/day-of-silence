@@ -1,0 +1,60 @@
+<div class="game-end-container">
+    <div class="game-end">
+        <div class="game-end_picture" style="background-image: url('{{background}}')"></div>
+        <div class="game-end_content">
+            <h1 class="game-end_header">
+                {{ title }}
+            </h1>
+            <div class="game-end_text">
+                {{ text }}
+            </div>
+            <div class="game-end_signature">
+                <strong>{{ signature }}</strong>
+            </div>
+            <div class="game-end_replay">
+                <button id='selector-for-button' data-js-selector="replay-button" class="game-button replay-button">
+                    {{ buttontext }}
+                </button>
+            </div>
+        </div>
+        <hr width="75%" class="game-end_separator" />
+        <div class="game-end_shares game-shares">
+            <div class="game-shares_header">Поделиться результатом</div>
+            <div class="game-shares_shares-container">
+                <a class="game-shares_icon game-shares_icon--tlg" target="_blank" href="https://t.me/share/url?url={{currentURL}}">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M18.92 6.089L4.747 11.555c-.967.388-.962.928-.176 1.168l3.534 1.104 1.353 4.146c.164.454.083.634.56.634.368 0 .53-.168.736-.368.13-.127.903-.88 1.767-1.719l3.677 2.717c.676.373 1.165.18 1.333-.628l2.414-11.374c.247-.99-.378-1.44-1.025-1.146zM8.66 13.573l7.967-5.026c.398-.242.763-.112.463.154l-6.822 6.155-.265 2.833-1.343-4.116z"
+                            fill="#63a9dc" fill-rule="evenodd" />
+                    </svg>
+                </a>
+
+                <a class="game-shares_icon game-shares_icon--ok" target="_blank" href="https://connect.ok.ru/offer?url={{currentURL}}">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M11.674 6.536a1.69 1.69 0 0 0-1.688 1.688c0 .93.757 1.687 1.688 1.687a1.69 1.69 0 0 0 1.688-1.687 1.69 1.69 0 0 0-1.688-1.688zm0 5.763a4.08 4.08 0 0 1-4.076-4.075 4.08 4.08 0 0 1 4.076-4.077 4.08 4.08 0 0 1 4.077 4.077 4.08 4.08 0 0 1-4.077 4.075zm-1.649 3.325a7.633 7.633 0 0 1-2.367-.98 1.194 1.194 0 0 1 1.272-2.022 5.175 5.175 0 0 0 5.489 0 1.194 1.194 0 1 1 1.272 2.022 7.647 7.647 0 0 1-2.367.98l2.279 2.28a1.194 1.194 0 0 1-1.69 1.688l-2.238-2.24-2.24 2.24a1.193 1.193 0 1 1-1.689-1.689l2.279-2.279"
+                            fill="#ff9e4c" fill-rule="evenodd" />
+                    </svg>
+                </a>
+
+                <a class="game-shares_icon game-shares_icon--fb" target="_blank" href="https://www.facebook.com/dialog/share?app_id=1727953450799543&display=popup&href={{currentURL}}">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M13.423 20v-7.298h2.464l.369-2.845h-2.832V8.042c0-.824.23-1.385 1.417-1.385h1.515V4.111A20.255 20.255 0 0 0 14.148 4c-2.183 0-3.678 1.326-3.678 3.76v2.097H8v2.845h2.47V20h2.953z"
+                            fill="#3c5998" fill-rule="evenodd" />
+                    </svg>
+                </a>
+                <a class="game-shares_icon game-shares_icon--tw" target="_blank" href="https://twitter.com/intent/tweet?text={{currentURL}}">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M20 7.539a6.56 6.56 0 0 1-1.885.517 3.294 3.294 0 0 0 1.443-1.816 6.575 6.575 0 0 1-2.085.796 3.283 3.283 0 0 0-5.593 2.994A9.32 9.32 0 0 1 5.114 6.6a3.28 3.28 0 0 0 1.016 4.382 3.274 3.274 0 0 1-1.487-.41v.041a3.285 3.285 0 0 0 2.633 3.218 3.305 3.305 0 0 1-1.482.056 3.286 3.286 0 0 0 3.066 2.28A6.585 6.585 0 0 1 4 17.524 9.291 9.291 0 0 0 9.032 19c6.038 0 9.34-5 9.34-9.337 0-.143-.004-.285-.01-.425A6.672 6.672 0 0 0 20 7.538z"
+                            fill="#01acee" fill-rule="evenodd" />
+                    </svg>
+                </a>
+                <a class="game-shares_icon game-shares_icon--vk" target="_blank" href="http://vk.com/share.php?url={{currentURL}}">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12.785 16.241s.288-.032.436-.194c.136-.148.132-.427.132-.427s-.02-1.304.576-1.496c.588-.19 1.341 1.26 2.14 1.818.605.422 1.064.33 1.064.33l2.137-.03s1.117-.071.587-.964c-.043-.073-.308-.661-1.588-1.87-1.34-1.264-1.16-1.059.453-3.246.983-1.332 1.376-2.145 1.253-2.493-.117-.332-.84-.244-.84-.244l-2.406.015s-.178-.025-.31.056c-.13.079-.212.262-.212.262s-.382 1.03-.89 1.907c-1.07 1.85-1.499 1.948-1.674 1.832-.407-.267-.305-1.075-.305-1.648 0-1.793.267-2.54-.521-2.733-.262-.065-.454-.107-1.123-.114-.858-.009-1.585.003-1.996.208-.274.136-.485.44-.356.457.159.022.519.099.71.363.246.341.237 1.107.237 1.107s.142 2.11-.33 2.371c-.325.18-.77-.187-1.725-1.865-.489-.859-.859-1.81-.859-1.81s-.07-.176-.198-.272c-.154-.115-.37-.151-.37-.151l-2.286.015s-.343.01-.469.161C3.94 7.721 4.043 8 4.043 8s1.79 4.258 3.817 6.403c1.858 1.967 3.968 1.838 3.968 1.838h.957z"
+                            fill="#48719e" fill-rule="evenodd" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <hr width="75%" class="game-end_separator" />
+    </div>
+</div>

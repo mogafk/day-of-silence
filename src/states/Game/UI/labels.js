@@ -26,6 +26,11 @@ export default class extends Group {
     this.voterTurnout.updateTextView(`${this.game.attendance}%`)
     this.voterTurnout2.updateTextView(`${this.game.attendance}%`)
 
+    this.interactVoterTurnout = () => {
+      this.voterTurnout.interactAnimate()
+      this.voterTurnout2.interactAnimate()
+    }
+
     this.updateVoterTurnoutView = val => {
       // this.voterTurnout2.setFillerPercentage(parseInt(val) / this.game.levelData.target)
 

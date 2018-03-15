@@ -3,8 +3,8 @@
     "briefing": "Пора на работу! Всего два месяца работаете в управе, но вам доверили важное дело",
     "background": "1996/background.png",
     "foreground": "1996/trees.png",
-    "levelTimer": 120,
-    "target": 700,
+    "levelTimer": 150,
+    "target": 650,
     "attendanceMin": 51,
     "attendanceMax": 62,
     "instruments": [
@@ -237,8 +237,8 @@
     "briefing": "Вы быстро продвигаетесь по карьерной лестнице — уже помощник замглавы управы",
     "background": "2000/background.png",
     "foreground": "2000/trees.png",
-    "levelTimer": 120,
-    "target": 750,
+    "levelTimer": 150,
+    "target": 700,
     "attendanceMin": 52,
     "attendanceMax": 64,
     "instruments": [
@@ -503,7 +503,7 @@
     "background": "2004/background.png",
     "foreground": "2004/trees.png",
     "levelTimer": 120,
-    "target": 800,
+    "target": 750,
     "attendanceMin": 61,
     "attendanceMax": 78,
     "instruments": [
@@ -744,11 +744,11 @@
     }
   },
   "2008": {
-    "briefing": "Вас определённо двигают по политической линии — у вас хорошо получается",
+    "briefing": "Похоже, наверху вами довольны — вас двигают по политической линии",
     "background": "2008/background.png",
     "foreground": "2008/trees.png",
     "levelTimer": 120,
-    "target": 850,
+    "target": 800,
     "attendanceMin": 64,
     "attendanceMax": 74,
     "instruments": [
@@ -983,7 +983,7 @@
     "background": "2012/background.png",
     "foreground": "2012/trees.png",
     "levelTimer": 120,
-    "target": 900,
+    "target": 850,
     "attendanceMin": 63,
     "attendanceMax": 76,
     "instruments": [
@@ -1215,11 +1215,11 @@
     "multiply": {}
   },
   "2018": {
-    "briefing": "Заберётесь ли вы выше — неизвестно, но работа в ЦИК пока вершина вашей карьеры",
+    "briefing": "Заберётесь ли вы выше, неизвестно, но работа в ЦИК — пока вершина вашей карьеры",
     "background": "2018/background.png",
     "foreground": "2018/trees.png",
     "levelTimer": 120,
-    "target": 950,
+    "target": 900,
     "attendanceMin": 68,
     "attendanceMax": 87,
     "instruments": [

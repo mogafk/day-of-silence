@@ -20,7 +20,7 @@ class Game extends Phaser.Game {
       : _w = _h * (16 / 9)
     super(_w, _h, Phaser.WebGL, 'content', null)
 
-    this.pixelRatio = 1 //  window.devicePixelRatio
+    this.pixelRatio = window.devicePixelRatio
 
     this.state.add('Game', GameState, false)
     this.state.add('Final', FinalState, false)

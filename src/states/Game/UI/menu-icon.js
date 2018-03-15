@@ -9,6 +9,7 @@ export default class extends Phaser.Button {
 
     this.inputEnabled = true
     this.input.useHandCursor = true
+    this.input.priorityID = 99
 
     this.frameName = 'open'
     this.open = false
@@ -19,9 +20,11 @@ export default class extends Phaser.Button {
     this.events.onInputDown.add(() => {
       this.open = !this.open
       if (this.open) {
+        this.game.paused = true
         this.frameName = 'close'
         this.onOpen.dispatch()
       } else {
+        this.game.paused = false
         this.frameName = 'open'
         this.onClose.dispatch()
       }

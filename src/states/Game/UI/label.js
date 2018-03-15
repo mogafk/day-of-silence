@@ -29,6 +29,23 @@ export default class extends Phaser.Text {
     this.shadowOffsetY = 0
     // this.setTextBounds(this.x - 50, this.y-50, this.width + 50, this.height + 50)
 
+    const interactionTweenOut = this.game.add.tween(this.scale)
+      .to({x: '-0.4', y: '-0.4'}, 200)
+    const interactionTweenMiddle = this.game.add.tween(this.scale)
+      .to({x: '-0.4', y: '-0.4'}, 200)
+    const interactionTweenIn = this.game.add.tween(this.scale)
+      .to({x: '+0.4', y: '+0.4'}, 300)
+      .chain(interactionTweenOut)
+
+    this.interactAnimate = () => {
+      if (
+        interactionTweenIn.isRunning ||
+        interactionTweenOut.isRunning ||
+        interactionTweenMiddle.isRunning
+      ) return
+      interactionTweenIn.start()
+    }
+
     this.updateTextView = val => {
       this.printText(val)
       if (this.additional) this.text += this.additional

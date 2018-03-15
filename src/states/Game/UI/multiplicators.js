@@ -11,8 +11,6 @@ export default class extends Phaser.Sprite {
   constructor (game, x, y, level) {
     super(game, x, y, 'ui-inerface', 'card-multi')
 
-    console.log('level:', level)
-
     const multiplicators = config.multiplicators
 
     this.multiplicatorSelected = new Phaser.Signal()
@@ -29,6 +27,7 @@ export default class extends Phaser.Sprite {
       this.addChild(icon)
       icon.inputEnabled = true
       icon.input.useHandCursor = true
+      icon.input.priorityID = 98
       icon.events.onInputDown.add(() => {
         this.multiplicatorSelected.dispatch(mult)
         this.destroy()

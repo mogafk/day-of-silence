@@ -4,9 +4,9 @@ const textStyle = (game) => {
   return {
     font: `bold 25px Roboto`,
     align: 'center',
-    fill: '#fdfdfd',
+    fill: '#fdfdfd'
     // stroke: 'black'
-    strokeThickness: 3
+    // strokeThickness: 3
   }
 }
 
@@ -16,6 +16,12 @@ const COLORS = {
   'neutral': 'white'
 }
 
+const SOUNDS = {
+  'positive': ['positive'],
+  'negative': ['negative-1', 'negative-2'],
+  'neutral': ['positive']
+}
+
 export default class extends Phaser.Sprite {
   constructor ({game, text = '', type = 'neutral'}) {
     super(game, game.camera.width / 2, game.camera.height * -0.5, 'ui-inerface', 'card-random')
@@ -23,14 +29,26 @@ export default class extends Phaser.Sprite {
     this.anchor.setTo(0.5)
     this.scale.setTo(game.scaleMap * 1.5)
 
+    if (type === 'negative') this.frameName = 'random-bad'
+    if (type === 'positive') this.frameName = 'random-good'
+
     this.caption = new Phaser.Text(this.game, 0, 0, text, textStyle(this.game))
     this.caption.anchor.setTo(0.5)
     // this.scale.setTo(game.scaleMap)
     this.caption.align = 'center'
-    this.caption.stroke = COLORS[type]
     this.caption.wordWrap = true
     this.caption.wordWrapWidth = 400
     this.addChild(this.caption)
+
+    const playSFX = () => {
+      const name = this.game.rnd.pick(SOUNDS[type])
+      const sfx = this.game.add.sound(`sfx-${name}`)
+      sfx.allowMultiple = true
+      sfx.play('', 0, 1, false)
+      return sfx
+    }
+
+    playSFX()
 
     const _tweenOut = game.make.tween(this)
       .to({ y: game.camera.height * 1.2 }, 500, Phaser.Easing.Back.In, false, 2500)
