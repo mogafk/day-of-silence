@@ -1,14 +1,15 @@
 import Phaser from 'phaser'
 
 export default class extends Phaser.State {
-  init () {}
+  init() { }
 
-  preload () {
+  preload() {
     // let text = this.add.text(this.world.centerX, this.world.centerY, 'loading fonts', { font: '16px Roboto', fill: '#dddddd', align: 'center' })
     // text.anchor.setTo(0.5, 0.5)
 
     this.load.crossOrigin = 'anonymous'
-    this.game.load.baseURL = './assets/'
+    // this.game.load.baseURL = './assets/'
+    this.game.load.baseURL = '/day_of_silence/assets/'
     this.game.load.image('ui-modal', 'ui/modal.png')
     this.game.load.atlas('ui-icons', 'ui/icons.png', 'ui/icons.json')
     this.game.load.atlasJSONHash('ui-multiplicators', 'ui/multiplicators.png', 'ui/multiplicators.json')
@@ -39,7 +40,7 @@ export default class extends Phaser.State {
     )
   }
 
-  render () {
+  render() {
     this.state.start('LevelSelect') // LevelSelect
   }
 }

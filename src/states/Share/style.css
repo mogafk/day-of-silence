@@ -33,7 +33,7 @@
       overflow-y: scroll;
       font-size: 14px;
       display: flex;
-      z-index: 4;
+      z-index: 12;
       background: rgba(0,0,0,0.7);
       -webkit-animation: backgroundmodal 0.7s ease forwards;
       animation: backgroundmodal 0.7s ease forwards;
