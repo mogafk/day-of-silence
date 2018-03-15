@@ -4,7 +4,7 @@
     "background": "1996/background.png",
     "foreground": "1996/trees.png",
     "levelTimer": 150,
-    "target": 650,
+    "target": 450,
     "attendanceMin": 51,
     "attendanceMax": 62,
     "instruments": [
