@@ -11,14 +11,16 @@ import MapEditor from './states/MapEditor'
 import FinalState from './states/Final'
 
 class Game extends Phaser.Game {
-  constructor () {
+  constructor() {
     const docElement = document.documentElement
     let _w = docElement.clientWidth
     let _h = docElement.clientHeight
     _w / 16 < _h / 9
       ? _h = _w * (9 / 16)
       : _w = _h * (16 / 9)
-      
+
+    // console.log('_w', _w);
+    if (_w > 1200) _w = 1200;
     super(_w, _h, Phaser.WebGL, document.querySelector('.js-game-container'), null)
 
     this.pixelRatio = 1 //  window.devicePixelRatio
@@ -38,7 +40,7 @@ class Game extends Phaser.Game {
   }
 }
 
-window.protestGameInit = function() {
+window.protestGameInit = function () {
   window.game = new Game()
 }
 
