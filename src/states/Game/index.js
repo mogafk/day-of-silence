@@ -6,10 +6,11 @@ import UI from './UI'
 import Countdown from './countdown'
 import Modal from './UI/modal'
 import Multiplicators from './UI/multiplicators'
-import Gameover from './UI/card-gameover'
+// import Gameover from './UI/card-gameover'
 import Menu from './UI/menu'
 import MenuIcon from './UI/menu-icon'
-import { GAStartLevel, GALooseLevel } from '.././Analit'
+import showShare from '.././Share'
+import { GAStartLevel, GALooseLevel, GARestartLevel } from '.././Analit'
 
 import Store from '.././Store'
 
@@ -22,7 +23,7 @@ export default class extends Phaser.State {
 
     this.restGameTime = this.game.time.create()
 
-    const timeValue = Phaser.Timer.SECOND * levelTimer * multiplicator
+    const timeValue = Phaser.Timer.SECOND * 20 * levelTimer * multiplicator
 
     this._15SecondsLeft = this.restGameTime.add(
       timeValue - (Phaser.Timer.SECOND * 16),
@@ -40,7 +41,7 @@ export default class extends Phaser.State {
       timeValue,
       () => {
         this.SessionEnd()
-        this.onSessionEnd.dispatch()
+        // this.onSessionEnd.dispatch()
       },
       this
     )
@@ -101,11 +102,6 @@ export default class extends Phaser.State {
 
     this.targetReached = new Phaser.Signal()
     this.onSessionEnd = new Phaser.Signal()
-
-    this.onSessionEnd.add(() => {
-      console.log('PAUSED')
-      this.paused = true
-    }, this)
 
     this.game.houses = levelData.buildings.locations
     this.store = new Store()
@@ -224,17 +220,22 @@ export default class extends Phaser.State {
       this.ui.buttons.visible = true
     }, this)
   }
-
+  restartGame () {
+    this.game.paused = false
+    GARestartLevel(this.game.levelKey)
+    this.game.state.start('Game')
+  }
   SessionEnd () {
+    this.game.paused = true
     GALooseLevel(this.game.levelKey)
     this.updateMusic(0)
     this.restGameTime.stop()
     this.ui.updateTimer(0)
     this.game.add.existing(new Modal(this.game))
-    // const endGameText = 'Ваше время вышло.\nВам не удалось собрать явку и вы сорвали выборы!'
-    // const info = this.game.add.existing(new Info({game: this.game, text: endGameText, type: 'negative'}))
-    const gamoverCard = new Gameover({game: this.game})
-    this.game.add.existing(gamoverCard)
+    showShare({
+      cb: () => this.restartGame(),
+      type: 'fail'
+    })
   }
 
   selectMultiplicators () {

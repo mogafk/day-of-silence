@@ -1,5 +1,5 @@
 import Phaser from 'phaser'
-import showShare from './Share'
+import showShare from '.././Share'
 import { GAWin } from '.././Analit'
 
 export default class extends Phaser.State {
@@ -26,7 +26,8 @@ export default class extends Phaser.State {
         cb: () => {
           this.game.levelKey = undefined
           this.state.start('LevelSelect')
-        }
+        },
+        type: 'win'
       })
     }, 3000)
 
