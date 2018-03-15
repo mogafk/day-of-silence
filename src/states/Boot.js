@@ -14,7 +14,7 @@ export default class extends Phaser.State {
     this.game.load.atlasJSONHash('ui-multiplicators', 'ui/multiplicators.png', 'ui/multiplicators.json')
     this.game.load.atlasJSONHash('ui-inerface', 'ui/interface.png', 'ui/interface.json')
     this.game.load.atlasJSONHash('cortege', 'misc/cortege.png', 'misc/cortege.json')
-    this.game.load.atlasJSONHash('ui-splash-button', 'ui/splash-button.png', 'ui/splash-button.json')
+    this.game.load.atlasJSONHash('ui-menu', 'ui/menu.png', 'ui/menu.json')
   }
 
   render () {
