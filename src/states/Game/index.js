@@ -207,9 +207,9 @@ export default class extends Phaser.State {
 
     this.menuLayer = this.game.add.group()
     this.menuIcon = this.menuLayer.add(new MenuIcon(this.game, this.game.camera.width * 0.95, this.game.camera.height * 0.05))
-    this.menuWindow = this.menuLayer.add(new Menu(this.game))
     this.menuIcon.onOpen.add(() => {
       this.menuModal = this.menuLayer.add(new Modal(this.game))
+      this.menuWindow = this.menuLayer.add(new Menu(this.game))
       this.menuLayer.bringToTop(this.menuIcon)
       this.menuLayer.bringToTop(this.menuWindow)
       this.menuWindow.show()
@@ -219,6 +219,7 @@ export default class extends Phaser.State {
     this.menuIcon.onClose.add(() => {
       if (this.menuModal) this.menuModal.destroy()
       this.menuWindow.hide()
+      if (this.menuWindow) this.menuWindow.destroy()
       this.ui.labels.visible = true
       this.ui.buttons.visible = true
     }, this)
