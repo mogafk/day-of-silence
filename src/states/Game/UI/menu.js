@@ -18,7 +18,6 @@ export default class extends Phaser.Sprite {
     this.buttonSound.inputEnabled = true
     this.buttonSound.input.priorityID = 100
     this.buttonSound.events.onInputUp.add(() => {
-      this.game.paused = false
       this.game.sound.mute = !this.game.sound.mute
     }, this)
 
@@ -44,7 +43,6 @@ export default class extends Phaser.Sprite {
     restartText.wordWrap = true
     restartText.wordWrapWidth = 300
 
-    this.alpha = 0
     this.show = () => { this.alpha = 1 }
     this.hide = () => { this.alpha = 0 }
   }

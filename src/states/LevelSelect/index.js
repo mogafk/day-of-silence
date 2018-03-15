@@ -2,6 +2,7 @@ import Phaser from 'phaser'
 import levels from '.././levels.json'
 import Card from '.././Game/UI/card'
 import CardYear from '.././Game/UI/card-carousel'
+import Mute from '.././Game/UI/button-mute'
 // import Info from '.././Game/UI/info'
 import Store from '.././Store'
 
@@ -18,6 +19,8 @@ export default class extends Phaser.State {
 
     this.game.load.atlasJSONHash('ui-folders', 'ui/folders.png', 'ui/folders.json')
     this.game.load.atlasJSONHash('ui-numbers', 'ui/numbers.png', 'ui/numbers.json')
+
+    this.game.sound.volume = 0.75
   }
 
   create () {
@@ -127,6 +130,8 @@ export default class extends Phaser.State {
     }, this, 'button-play', 'button-play', 'button-play', 'button-play')
     startButton.scale.setTo(this.game.scaleMap * 1.25)
     startButton.anchor.setTo(0.5)
+
+    this.game.add.existing(new Mute(this.game, camW * 0.9, camH * 0.1))
 
     // const infoLabel = new Info({
     //   game: this.game,
