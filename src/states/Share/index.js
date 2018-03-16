@@ -33,8 +33,20 @@ const show = ({ cb, type = 'win' }) => {
   fragment.innerHTML = html
   document.body.appendChild(fragment)
 
+  var windowW = window.innerWidth;
+  if (windowW > 990) {
+    setTimeout(function () {
+      document.body.style.overflow = 'hidden';
+      document.querySelector('[tabindex="10"]').focus();
+    }, 1000)
+  }
+
+
   document.querySelector('#selector-for-button').onclick = function () {
     document.body.removeChild(fragment)
+    if (windowW > 990) {
+      document.body.style.overflow = 'auto';
+    }
     cb()
   }
 }
